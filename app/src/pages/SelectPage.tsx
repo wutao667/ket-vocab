@@ -53,6 +53,8 @@ export default function SelectPage() {
   const [showCreate, setShowCreate] = useState(false)
   const [listName, setListName] = useState('')
   const [creating, setCreating] = useState(false)
+  // 序号范围输入框的文本由页面持有，滑动选择结束后可直接回填。
+  const [rangeText, setRangeText] = useState('')
   // 已经在别的背诵列表里的词：给个淡底色，避免重复挑选。
   const [inListIds, setInListIds] = useState<Set<string>>(new Set())
 
@@ -141,7 +143,15 @@ export default function SelectPage() {
     gestureRef.current = null
     previousPointRef.current = null
     cancelAnimationFrame(animationRef.current)
-    if (gesture.changed) showUndo(`${gesture.target ? '已选择' : '已取消'} ${gesture.changed} 个`, gesture.snapshot)
+    if (gesture.changed) {
+      showUndo(`${gesture.target ? '已选择' : '已取消'} ${gesture.changed} 个`, gesture.snapshot)
+      // 把本次滑过的区间回填到序号框（界面用 1 起始的序号）
+      if (gesture.minIndex !== Infinity && gesture.maxIndex !== -Infinity) {
+        const from = gesture.minIndex + 1
+        const to = gesture.maxIndex + 1
+        setRangeText(from === to ? String(from) : `${from}-${to}`)
+      }
+    }
   }, [showUndo])
 
   // 方向判定：横向拖动 = 批量选择，纵向拖动 = 页面滚动。
@@ -224,7 +234,7 @@ export default function SelectPage() {
   return <div className="flex h-[100dvh] flex-col bg-paper">
     <header className="flex items-center gap-2 bg-paper px-3 py-2"><Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div><span className="rounded-full bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-brand">已选 {selected.size}</span></header>
     {storageError && <div role="alert" className="flex items-start gap-2 bg-red-50 px-4 py-3 text-sm text-red-800"><Database className="mt-0.5 shrink-0" size={18} /><span>{storageError} 当前页面仍可临时使用，但刷新后可能丢失。</span><button aria-label="关闭提示" onClick={() => setStorageError('')}><X size={18} /></button></div>}
-    <RangeInput total={vocabulary.length} onApply={applyRange} />
+    <RangeInput total={vocabulary.length} value={rangeText} onChange={setRangeText} onApply={applyRange} />
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-stone-200 bg-stone-100 px-3 py-1 text-[11px] text-stone-500"><span className="flex items-center gap-1"><MousePointer2 size={13} />左右拖动批量选 · 上下滑动滚动 · 点击切换</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-emerald-200" />本次已选</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-amber-50 ring-1 ring-inset ring-amber-200" />已在列表</span></div>
     <div ref={scrollRef} data-vocab-scroll className="min-h-0 flex-1 overflow-auto overscroll-contain" style={{ touchAction: 'pan-y' }}>
       <div className="relative mx-auto w-full max-w-5xl" style={{ height: virtualizer.getTotalSize() }}>

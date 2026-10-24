@@ -31,3 +31,18 @@ describe('swipe selection gesture', () => {
     expect([...gesture.snapshot]).toEqual(['old'])
   })
 })
+
+describe('gesture index bounds', () => {
+  it('tracks the min and max index swept by the gesture', () => {
+    const gesture = beginGesture(new Set(), 'id-3', 1, 100)
+    for (const index of [3, 4, 5, 9, 12, 7, 2]) visitGesture(gesture, index, `id-${index}`)
+    expect(gesture.minIndex).toBe(2)
+    expect(gesture.maxIndex).toBe(12)
+  })
+
+  it('starts with an empty interval before any cell is visited', () => {
+    const gesture = beginGesture(new Set(), 'id-0', 1, 100)
+    expect(gesture.minIndex).toBe(Infinity)
+    expect(gesture.maxIndex).toBe(-Infinity)
+  })
+})
