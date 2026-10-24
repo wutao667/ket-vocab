@@ -1,0 +1,17 @@
+{
+ "ipa": {
+  "ipa-dict": 1448,
+  "composed": 116,
+  "ecdict-converted": 97,
+  "missing": 14
+ },
+ "zh": {
+  "ok": 1670,
+  "missing": 5
+ },
+ "ex": {
+  "missing": 142,
+  "cambridge-phrase": 287,
+  "tatoeba": 1246
+ }
+}

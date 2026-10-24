@@ -1,0 +1,9120 @@
+{
+ "counts": {
+  "exact": 975,
+  "variant": 140,
+  "alias": 21,
+  "topic-only": 0
+ },
+ "mapping": [
+  {
+   "topic": "Appliances",
+   "source": "camera",
+   "vocab_words": [
+    "camera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "CD (player)",
+   "vocab_words": [
+    "CD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Appliances",
+   "source": "cell phone",
+   "vocab_words": [
+    "cell phone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "clock",
+   "vocab_words": [
+    "clock"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "computer",
+   "vocab_words": [
+    "computer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "cooker",
+   "vocab_words": [
+    "cooker"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "digital camera",
+   "vocab_words": [
+    "digital camera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "DVD (player)",
+   "vocab_words": [
+    "DVD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Appliances",
+   "source": "electric",
+   "vocab_words": [
+    "electric"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "electricity",
+   "vocab_words": [
+    "electricity"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "fridge",
+   "vocab_words": [
+    "fridge"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "gas",
+   "vocab_words": [
+    "gas"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "heating",
+   "vocab_words": [
+    "heating"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "lamp",
+   "vocab_words": [
+    "lamp"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "laptop",
+   "vocab_words": [
+    "laptop (computer)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Appliances",
+   "source": "lights",
+   "vocab_words": [
+    "light"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Appliances",
+   "source": "mobile (phone)",
+   "vocab_words": [
+    "mobile (phone)"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "oven",
+   "vocab_words": [
+    "oven"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "PC",
+   "vocab_words": [
+    "PC (personal computer)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Appliances",
+   "source": "phone",
+   "vocab_words": [
+    "phone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "radio",
+   "vocab_words": [
+    "radio"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "telephone",
+   "vocab_words": [
+    "telephone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "television / TV",
+   "vocab_words": [
+    "television (TV)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Appliances",
+   "source": "video",
+   "vocab_words": [
+    "video"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Appliances",
+   "source": "washing machine",
+   "vocab_words": [
+    "washing machine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "backpack",
+   "vocab_words": [
+    "backpack"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "bag",
+   "vocab_words": [
+    "bag"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "bathing suit",
+   "vocab_words": [
+    "bathing suit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "belt",
+   "vocab_words": [
+    "belt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "blouse",
+   "vocab_words": [
+    "blouse"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "boot",
+   "vocab_words": [
+    "boot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "bracelet",
+   "vocab_words": [
+    "bracelet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "cap",
+   "vocab_words": [
+    "cap"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "chain",
+   "vocab_words": [
+    "chain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "clothes",
+   "vocab_words": [
+    "clothes"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "coat",
+   "vocab_words": [
+    "coat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "costume (swimming)",
+   "vocab_words": [
+    "costume"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "dress",
+   "vocab_words": [
+    "dress"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "earring",
+   "vocab_words": [
+    "earring"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "fashion",
+   "vocab_words": [
+    "fashion"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "get dressed",
+   "vocab_words": [
+    "get dressed"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "glasses",
+   "vocab_words": [
+    "glasses"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "glove",
+   "vocab_words": [
+    "glove"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "handbag",
+   "vocab_words": [
+    "handbag"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "hat",
+   "vocab_words": [
+    "hat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "hoodie",
+   "vocab_words": [
+    "hoodie"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "jacket",
+   "vocab_words": [
+    "jacket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "jeans",
+   "vocab_words": [
+    "jeans"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "jewellery / jewelry",
+   "vocab_words": [
+    "jewellery"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "jumper",
+   "vocab_words": [
+    "jumper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "kit",
+   "vocab_words": [
+    "kit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "necklace",
+   "vocab_words": [
+    "necklace"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "pocket",
+   "vocab_words": [
+    "pocket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "purse",
+   "vocab_words": [
+    "purse"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "raincoat",
+   "vocab_words": [
+    "raincoat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "ring",
+   "vocab_words": [
+    "ring"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "rucksack",
+   "vocab_words": [
+    "backpack"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "scarf",
+   "vocab_words": [
+    "scarf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "shirt",
+   "vocab_words": [
+    "shirt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "shoes",
+   "vocab_words": [
+    "shoe"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "shorts",
+   "vocab_words": [
+    "shorts"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "skirt",
+   "vocab_words": [
+    "skirt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "sock",
+   "vocab_words": [
+    "sock"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "suit",
+   "vocab_words": [
+    "suit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "sunglasses",
+   "vocab_words": [
+    "sunglasses"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "sweater",
+   "vocab_words": [
+    "sweater"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "swimming costume",
+   "vocab_words": [
+    "swimming costume"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "swimsuit",
+   "vocab_words": [
+    "swimsuit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "tie",
+   "vocab_words": [
+    "tie"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "tights",
+   "vocab_words": [
+    "tights"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "trainers",
+   "vocab_words": [
+    "trainer"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "trousers",
+   "vocab_words": [
+    "trousers"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "try on (v)",
+   "vocab_words": [
+    "try on"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "T-shirt",
+   "vocab_words": [
+    "T-shirt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "umbrella",
+   "vocab_words": [
+    "umbrella"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "uniform",
+   "vocab_words": [
+    "uniform"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "wallet",
+   "vocab_words": [
+    "wallet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "watch",
+   "vocab_words": [
+    "watch"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Clothes and Accessories",
+   "source": "wear (v)",
+   "vocab_words": [
+    "wear"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Colours",
+   "source": "black",
+   "vocab_words": [
+    "black"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "blue",
+   "vocab_words": [
+    "blue"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "brown",
+   "vocab_words": [
+    "brown"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "dark",
+   "vocab_words": [
+    "dark"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "golden",
+   "vocab_words": [
+    "golden"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "green",
+   "vocab_words": [
+    "green"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "grey / gray",
+   "vocab_words": [
+    "grey"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Colours",
+   "source": "light",
+   "vocab_words": [
+    "light"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "orange",
+   "vocab_words": [
+    "orange"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "pale",
+   "vocab_words": [
+    "pale"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "pink",
+   "vocab_words": [
+    "pink"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "purple",
+   "vocab_words": [
+    "purple"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "red",
+   "vocab_words": [
+    "red"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "silver",
+   "vocab_words": [
+    "silver"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "white",
+   "vocab_words": [
+    "white"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Colours",
+   "source": "yellow",
+   "vocab_words": [
+    "yellow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "address",
+   "vocab_words": [
+    "address"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "at / @",
+   "vocab_words": [
+    "at / @"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "by post",
+   "vocab_words": [
+    "by post"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "call (v)",
+   "vocab_words": [
+    "call"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "camera",
+   "vocab_words": [
+    "camera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "CD (player)",
+   "vocab_words": [
+    "CD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "cell phone",
+   "vocab_words": [
+    "cell phone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "chat",
+   "vocab_words": [
+    "chat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "click (v)",
+   "vocab_words": [
+    "click"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "computer",
+   "vocab_words": [
+    "computer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "conversation",
+   "vocab_words": [
+    "conversation"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "digital",
+   "vocab_words": [
+    "digital"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "digital camera",
+   "vocab_words": [
+    "digital camera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "dot",
+   "vocab_words": [
+    "dot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "download (n & v)",
+   "vocab_words": [
+    "download"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "DVD (player)",
+   "vocab_words": [
+    "DVD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "email (n & v)",
+   "vocab_words": [
+    "email"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "envelope",
+   "vocab_words": [
+    "envelope"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "file",
+   "vocab_words": [
+    "file"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "information",
+   "vocab_words": [
+    "information"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "internet",
+   "vocab_words": [
+    "internet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "keyboard",
+   "vocab_words": [
+    "keyboard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "laptop (computer)",
+   "vocab_words": [
+    "laptop (computer)"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "mobile (phone)",
+   "vocab_words": [
+    "mobile (phone)"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "mouse",
+   "vocab_words": [
+    "mouse"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "net",
+   "vocab_words": [
+    "net"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "online",
+   "vocab_words": [
+    "online"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "password",
+   "vocab_words": [
+    "password"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "PC",
+   "vocab_words": [
+    "PC (personal computer)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "photograph",
+   "vocab_words": [
+    "photo(graph)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "photography",
+   "vocab_words": [
+    "photography"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "phone",
+   "vocab_words": [
+    "phone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "printer",
+   "vocab_words": [
+    "printer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "screen",
+   "vocab_words": [
+    "screen"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "software",
+   "vocab_words": [
+    "software"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "tablet",
+   "vocab_words": [
+    "tablet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "talk",
+   "vocab_words": [
+    "talk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "telephone",
+   "vocab_words": [
+    "telephone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "text (n & v)",
+   "vocab_words": [
+    "text"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "video",
+   "vocab_words": [
+    "video"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "web",
+   "vocab_words": [
+    "web"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "web page",
+   "vocab_words": [
+    "web page"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Communication and Technology",
+   "source": "website",
+   "vocab_words": [
+    "website"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "ad / advertisement",
+   "vocab_words": [
+    "ad",
+    "advertisement"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "article",
+   "vocab_words": [
+    "article"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "bill",
+   "vocab_words": [
+    "bill"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "book",
+   "vocab_words": [
+    "book"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "card",
+   "vocab_words": [
+    "card"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "comic",
+   "vocab_words": [
+    "comic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "diary",
+   "vocab_words": [
+    "diary"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "diploma",
+   "vocab_words": [
+    "diploma"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "email",
+   "vocab_words": [
+    "email"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "form",
+   "vocab_words": [
+    "form"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "letter",
+   "vocab_words": [
+    "letter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "licence",
+   "vocab_words": [
+    "licence"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "magazine",
+   "vocab_words": [
+    "magazine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "menu",
+   "vocab_words": [
+    "menu"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "message",
+   "vocab_words": [
+    "message"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "newspaper",
+   "vocab_words": [
+    "newspaper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "note",
+   "vocab_words": [
+    "note"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "notebook",
+   "vocab_words": [
+    "notebook"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "passport",
+   "vocab_words": [
+    "passport"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "postcard",
+   "vocab_words": [
+    "postcard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "project",
+   "vocab_words": [
+    "project"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "text (n & v)",
+   "vocab_words": [
+    "text"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "textbook",
+   "vocab_words": [
+    "textbook"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Documents and Texts",
+   "source": "ticket",
+   "vocab_words": [
+    "ticket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "advanced",
+   "vocab_words": [
+    "advanced"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "beginner",
+   "vocab_words": [
+    "beginner"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "biology",
+   "vocab_words": [
+    "biology"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "blackboard",
+   "vocab_words": [
+    "blackboard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "board",
+   "vocab_words": [
+    "board"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "book",
+   "vocab_words": [
+    "book"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "bookshelf",
+   "vocab_words": [
+    "bookshelf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "chemistry",
+   "vocab_words": [
+    "chemistry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "class",
+   "vocab_words": [
+    "class"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "classmate",
+   "vocab_words": [
+    "classmate"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "classroom",
+   "vocab_words": [
+    "classroom"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "clever",
+   "vocab_words": [
+    "clever"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "coach",
+   "vocab_words": [
+    "coach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "college",
+   "vocab_words": [
+    "college"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "course",
+   "vocab_words": [
+    "course"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "desk",
+   "vocab_words": [
+    "desk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "dictionary",
+   "vocab_words": [
+    "dictionary"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "diploma",
+   "vocab_words": [
+    "diploma"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "eraser",
+   "vocab_words": [
+    "eraser"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "exam(ination)",
+   "vocab_words": [
+    "examination/exam"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Education",
+   "source": "geography",
+   "vocab_words": [
+    "geography"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "history",
+   "vocab_words": [
+    "history"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "homework",
+   "vocab_words": [
+    "homework"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "information",
+   "vocab_words": [
+    "information"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "instructions",
+   "vocab_words": [
+    "instructions"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "know",
+   "vocab_words": [
+    "know"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "language",
+   "vocab_words": [
+    "language"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "learn",
+   "vocab_words": [
+    "learn"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "lesson",
+   "vocab_words": [
+    "lesson"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "level",
+   "vocab_words": [
+    "level"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "library",
+   "vocab_words": [
+    "library"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "mark",
+   "vocab_words": [
+    "mark"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "maths/mathematics",
+   "vocab_words": [
+    "maths/mathematics"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "note",
+   "vocab_words": [
+    "note"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "physics",
+   "vocab_words": [
+    "physics"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "practice (n)",
+   "vocab_words": [
+    "practice"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Education",
+   "source": "practise (v)",
+   "vocab_words": [
+    "practise"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Education",
+   "source": "project",
+   "vocab_words": [
+    "project"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "pupil",
+   "vocab_words": [
+    "pupil"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "read",
+   "vocab_words": [
+    "read"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "remember",
+   "vocab_words": [
+    "remember"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "rubber",
+   "vocab_words": [
+    "rubber"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "ruler",
+   "vocab_words": [
+    "ruler"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "school",
+   "vocab_words": [
+    "school"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "science",
+   "vocab_words": [
+    "science"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "student",
+   "vocab_words": [
+    "student"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "studies",
+   "vocab_words": [
+    "studies"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "study (v)",
+   "vocab_words": [
+    "study"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Education",
+   "source": "subject",
+   "vocab_words": [
+    "subject"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "teach",
+   "vocab_words": [
+    "teach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "teacher",
+   "vocab_words": [
+    "teacher"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "term",
+   "vocab_words": [
+    "term"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Education",
+   "source": "test (n)",
+   "vocab_words": [
+    "test"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Education",
+   "source": "university",
+   "vocab_words": [
+    "university"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "act (v)",
+   "vocab_words": [
+    "act"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "actor",
+   "vocab_words": [
+    "actor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "adventure",
+   "vocab_words": [
+    "adventure"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "advertisement",
+   "vocab_words": [
+    "advertisement"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "art",
+   "vocab_words": [
+    "art"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "article",
+   "vocab_words": [
+    "article"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "board game",
+   "vocab_words": [
+    "board game"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "book",
+   "vocab_words": [
+    "book"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "card",
+   "vocab_words": [
+    "card"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "cartoon",
+   "vocab_words": [
+    "cartoon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "CD (player)",
+   "vocab_words": [
+    "CD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "chess",
+   "vocab_words": [
+    "chess"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "cinema",
+   "vocab_words": [
+    "cinema"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "classical (music)",
+   "vocab_words": [
+    "classical"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "competition",
+   "vocab_words": [
+    "competition"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "concert",
+   "vocab_words": [
+    "concert"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "dance (n & v)",
+   "vocab_words": [
+    "dance"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "dancer",
+   "vocab_words": [
+    "dancer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "draw",
+   "vocab_words": [
+    "draw"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "drawing",
+   "vocab_words": [
+    "drawing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "disco",
+   "vocab_words": [
+    "disco"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "drum",
+   "vocab_words": [
+    "drum"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "DVD (player)",
+   "vocab_words": [
+    "DVD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "exhibition",
+   "vocab_words": [
+    "exhibition"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "festival",
+   "vocab_words": [
+    "festival"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "film (n & v)",
+   "vocab_words": [
+    "film"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "fun",
+   "vocab_words": [
+    "fun"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "go out",
+   "vocab_words": [
+    "go out"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "group",
+   "vocab_words": [
+    "group"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "guitar",
+   "vocab_words": [
+    "guitar"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "hip hop",
+   "vocab_words": [
+    "hip hop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "instrument",
+   "vocab_words": [
+    "instrument"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "keyboard",
+   "vocab_words": [
+    "keyboard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "laugh",
+   "vocab_words": [
+    "laugh"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "listen to",
+   "vocab_words": [
+    "listen (to)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "look at",
+   "vocab_words": [
+    "look at"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "magazine",
+   "vocab_words": [
+    "magazine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "music",
+   "vocab_words": [
+    "music"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "musician",
+   "vocab_words": [
+    "musician"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "news",
+   "vocab_words": [
+    "news"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "newspaper",
+   "vocab_words": [
+    "newspaper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "opera",
+   "vocab_words": [
+    "opera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "paint (v)",
+   "vocab_words": [
+    "paint"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "painter",
+   "vocab_words": [
+    "painter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "photograph",
+   "vocab_words": [
+    "photo(graph)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "photographer",
+   "vocab_words": [
+    "photographer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "photography",
+   "vocab_words": [
+    "photography"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "piano",
+   "vocab_words": [
+    "piano"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "picture",
+   "vocab_words": [
+    "picture"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "play (n)",
+   "vocab_words": [
+    "play"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "pop (music)",
+   "vocab_words": [
+    "pop"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "practice (n)",
+   "vocab_words": [
+    "practice"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "practise (v)",
+   "vocab_words": [
+    "practise"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "programme",
+   "vocab_words": [
+    "programme"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "project",
+   "vocab_words": [
+    "project"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "radio",
+   "vocab_words": [
+    "radio"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "read (v)",
+   "vocab_words": [
+    "read"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "rock (concert)",
+   "vocab_words": [
+    "rock"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "screen (n)",
+   "vocab_words": [
+    "screen"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "show (n)",
+   "vocab_words": [
+    "show"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "sing",
+   "vocab_words": [
+    "sing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "singer",
+   "vocab_words": [
+    "singer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "song",
+   "vocab_words": [
+    "song"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "television / TV",
+   "vocab_words": [
+    "television (TV)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "theatre",
+   "vocab_words": [
+    "theatre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "ticket",
+   "vocab_words": [
+    "ticket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "video (game)",
+   "vocab_words": [
+    "video"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Entertainment and Media",
+   "source": "watch (v)",
+   "vocab_words": [
+    "watch"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "aunt",
+   "vocab_words": [
+    "aunt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "boy",
+   "vocab_words": [
+    "boy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "brother",
+   "vocab_words": [
+    "brother"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "child",
+   "vocab_words": [
+    "child"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "cousin",
+   "vocab_words": [
+    "cousin"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "dad(dy)",
+   "vocab_words": [
+    "dad"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "daughter",
+   "vocab_words": [
+    "daughter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "family",
+   "vocab_words": [
+    "family"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "father",
+   "vocab_words": [
+    "father"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "friend",
+   "vocab_words": [
+    "friend"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "friendly",
+   "vocab_words": [
+    "friendly"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "girl",
+   "vocab_words": [
+    "girl"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandchild",
+   "vocab_words": [
+    "grandchild"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grand(d)ad",
+   "vocab_words": [
+    "grand(d)ad"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "granddaughter",
+   "vocab_words": [
+    "granddaughter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandfather",
+   "vocab_words": [
+    "grandfather"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandma",
+   "vocab_words": [
+    "grandma"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandmother",
+   "vocab_words": [
+    "grandmother"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandpa",
+   "vocab_words": [
+    "grandpa"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandparent",
+   "vocab_words": [
+    "grandparent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "grandson",
+   "vocab_words": [
+    "grandson"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "granny",
+   "vocab_words": [
+    "granny"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "group",
+   "vocab_words": [
+    "group"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "guest",
+   "vocab_words": [
+    "guest"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "guy",
+   "vocab_words": [
+    "guy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "husband",
+   "vocab_words": [
+    "husband"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "love (n & v)",
+   "vocab_words": [
+    "love"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "married",
+   "vocab_words": [
+    "married"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "Miss",
+   "vocab_words": [
+    "Miss"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "mother",
+   "vocab_words": [
+    "mother"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "Mr",
+   "vocab_words": [
+    "Mr"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "Mrs",
+   "vocab_words": [
+    "Mrs"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "Ms",
+   "vocab_words": [
+    "Ms"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "mum(my)",
+   "vocab_words": [
+    "mum"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "neighbour",
+   "vocab_words": [
+    "neighbour"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "parent",
+   "vocab_words": [
+    "parent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "penfriend",
+   "vocab_words": [
+    "penfriend"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "sister",
+   "vocab_words": [
+    "sister"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "son",
+   "vocab_words": [
+    "son"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "surname",
+   "vocab_words": [
+    "surname"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "teenager",
+   "vocab_words": [
+    "teenager"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "uncle",
+   "vocab_words": [
+    "uncle"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Family and Friends",
+   "source": "wife",
+   "vocab_words": [
+    "wife"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "apple",
+   "vocab_words": [
+    "apple"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "bake",
+   "vocab_words": [
+    "bake"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "banana",
+   "vocab_words": [
+    "banana"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "barbecue",
+   "vocab_words": [
+    "barbecue/barbeque"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "biscuit",
+   "vocab_words": [
+    "biscuit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "boil",
+   "vocab_words": [
+    "boil"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "boiled",
+   "vocab_words": [
+    "boiled"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "bottle",
+   "vocab_words": [
+    "bottle"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "bowl",
+   "vocab_words": [
+    "bowl"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "box",
+   "vocab_words": [
+    "box"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "bread",
+   "vocab_words": [
+    "bread"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "break (n)",
+   "vocab_words": [
+    "break"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "breakfast",
+   "vocab_words": [
+    "breakfast"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "burger",
+   "vocab_words": [
+    "burger"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "butter",
+   "vocab_words": [
+    "butter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cafe/café",
+   "vocab_words": [
+    "cafe/café"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cafeteria",
+   "vocab_words": [
+    "cafeteria"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cake",
+   "vocab_words": [
+    "cake"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "can (n)",
+   "vocab_words": [
+    "can"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "candy",
+   "vocab_words": [
+    "candy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "carrot",
+   "vocab_words": [
+    "carrot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cereal",
+   "vocab_words": [
+    "cereal"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cheese",
+   "vocab_words": [
+    "cheese"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "chef",
+   "vocab_words": [
+    "chef"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "chicken",
+   "vocab_words": [
+    "chicken"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "chilli",
+   "vocab_words": [
+    "chilli"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "chips",
+   "vocab_words": [
+    "chips"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "chocolate",
+   "vocab_words": [
+    "chocolate"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "coffee",
+   "vocab_words": [
+    "coffee"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cola",
+   "vocab_words": [
+    "cola"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cook (n & v)",
+   "vocab_words": [
+    "cook"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cooker",
+   "vocab_words": [
+    "cooker"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cream",
+   "vocab_words": [
+    "cream"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cup",
+   "vocab_words": [
+    "cup"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "curry",
+   "vocab_words": [
+    "curry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "cut (n)",
+   "vocab_words": [
+    "cut"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "delicious",
+   "vocab_words": [
+    "delicious"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "dessert",
+   "vocab_words": [
+    "dessert"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "dinner",
+   "vocab_words": [
+    "dinner"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "dish (n)",
+   "vocab_words": [
+    "dish"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "drink",
+   "vocab_words": [
+    "drink"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "eat",
+   "vocab_words": [
+    "eat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "egg",
+   "vocab_words": [
+    "egg"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "fish",
+   "vocab_words": [
+    "fish"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "food",
+   "vocab_words": [
+    "food"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "fork",
+   "vocab_words": [
+    "fork"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "fridge",
+   "vocab_words": [
+    "fridge"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "fried",
+   "vocab_words": [
+    "fried"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "fruit",
+   "vocab_words": [
+    "fruit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "garlic",
+   "vocab_words": [
+    "garlic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "glass",
+   "vocab_words": [
+    "glass"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "grape",
+   "vocab_words": [
+    "grape"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "grilled",
+   "vocab_words": [
+    "grilled"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "honey",
+   "vocab_words": [
+    "honey"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "hungry",
+   "vocab_words": [
+    "hungry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "ice",
+   "vocab_words": [
+    "ice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "ice cream",
+   "vocab_words": [
+    "ice cream"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "jam",
+   "vocab_words": [
+    "jam"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "juice",
+   "vocab_words": [
+    "juice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "kitchen",
+   "vocab_words": [
+    "kitchen"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "knife",
+   "vocab_words": [
+    "knife"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "lemon",
+   "vocab_words": [
+    "lemon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "lemonade",
+   "vocab_words": [
+    "lemonade"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "lunch",
+   "vocab_words": [
+    "lunch"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "main course",
+   "vocab_words": [
+    "main course"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "meal",
+   "vocab_words": [
+    "meal"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "meat",
+   "vocab_words": [
+    "meat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "melon",
+   "vocab_words": [
+    "melon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "menu",
+   "vocab_words": [
+    "menu"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "milk",
+   "vocab_words": [
+    "milk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "mineral water",
+   "vocab_words": [
+    "mineral water"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "mushroom",
+   "vocab_words": [
+    "mushroom"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "oil",
+   "vocab_words": [
+    "oil"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "omelette",
+   "vocab_words": [
+    "omelette"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "onion",
+   "vocab_words": [
+    "onion"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "orange",
+   "vocab_words": [
+    "orange"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "pasta",
+   "vocab_words": [
+    "pasta"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "pear",
+   "vocab_words": [
+    "pear"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "pepper",
+   "vocab_words": [
+    "pepper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "picnic",
+   "vocab_words": [
+    "picnic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "piece of cake",
+   "vocab_words": [
+    "cake"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "pizza",
+   "vocab_words": [
+    "pizza"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "plate",
+   "vocab_words": [
+    "plate"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "potato",
+   "vocab_words": [
+    "potato"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "rice",
+   "vocab_words": [
+    "rice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "roast (v & adj)",
+   "vocab_words": [
+    "roast"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "salad",
+   "vocab_words": [
+    "salad"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "salt",
+   "vocab_words": [
+    "salt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "sandwich",
+   "vocab_words": [
+    "sandwich"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "sauce",
+   "vocab_words": [
+    "sauce"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "sausage",
+   "vocab_words": [
+    "sausage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "slice (n)",
+   "vocab_words": [
+    "slice"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "snack (n)",
+   "vocab_words": [
+    "snack"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "soup",
+   "vocab_words": [
+    "soup"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "steak",
+   "vocab_words": [
+    "steak"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "strawberry",
+   "vocab_words": [
+    "strawberry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "sugar",
+   "vocab_words": [
+    "sugar"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "sweet (n & adj)",
+   "vocab_words": [
+    "sweet"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "tea",
+   "vocab_words": [
+    "tea"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "thirsty",
+   "vocab_words": [
+    "thirsty"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "toast",
+   "vocab_words": [
+    "toast"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "tomato",
+   "vocab_words": [
+    "tomato"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "vegetable",
+   "vocab_words": [
+    "vegetable"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "waiter",
+   "vocab_words": [
+    "waiter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "waitress",
+   "vocab_words": [
+    "waitress"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "wash up",
+   "vocab_words": [
+    "wash up"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Food and Drink",
+   "source": "yog(h)urt",
+   "vocab_words": [
+    "yog(h)urt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "accident",
+   "vocab_words": [
+    "accident"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "ambulance",
+   "vocab_words": [
+    "ambulance"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "appointment",
+   "vocab_words": [
+    "appointment"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "arm",
+   "vocab_words": [
+    "arm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "baby",
+   "vocab_words": [
+    "baby"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "back",
+   "vocab_words": [
+    "back"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "blood",
+   "vocab_words": [
+    "blood"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "body",
+   "vocab_words": [
+    "body"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "brain",
+   "vocab_words": [
+    "brain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "break (v)",
+   "vocab_words": [
+    "break"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "check (v)",
+   "vocab_words": [
+    "check"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "chemist",
+   "vocab_words": [
+    "chemist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "clean (adj & v)",
+   "vocab_words": [
+    "clean"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "cold (n)",
+   "vocab_words": [
+    "cold"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "comb (n)",
+   "vocab_words": [
+    "comb"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "cut (v)",
+   "vocab_words": [
+    "cut"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "danger",
+   "vocab_words": [
+    "danger"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "dangerous",
+   "vocab_words": [
+    "dangerous"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "dead",
+   "vocab_words": [
+    "dead"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "dentist",
+   "vocab_words": [
+    "dentist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "die",
+   "vocab_words": [
+    "die"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "doctor",
+   "vocab_words": [
+    "doctor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "Dr",
+   "vocab_words": [
+    "Dr"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "ear",
+   "vocab_words": [
+    "ear"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "exercise",
+   "vocab_words": [
+    "exercise"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "eye",
+   "vocab_words": [
+    "eye"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "face",
+   "vocab_words": [
+    "face"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "fall (v)",
+   "vocab_words": [
+    "fall"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "feel (v)",
+   "vocab_words": [
+    "feel"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "finger",
+   "vocab_words": [
+    "finger"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "fit",
+   "vocab_words": [
+    "fit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "foot",
+   "vocab_words": [
+    "foot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "hair",
+   "vocab_words": [
+    "hair"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "hand",
+   "vocab_words": [
+    "hand"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "head",
+   "vocab_words": [
+    "head"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "health",
+   "vocab_words": [
+    "health"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "hear (v)",
+   "vocab_words": [
+    "hear"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "heart",
+   "vocab_words": [
+    "heart"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "hospital",
+   "vocab_words": [
+    "hospital"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "hurt (v)",
+   "vocab_words": [
+    "hurt"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "ill",
+   "vocab_words": [
+    "ill"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "leg",
+   "vocab_words": [
+    "leg"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "lie down",
+   "vocab_words": [
+    "lie down"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "medicine",
+   "vocab_words": [
+    "medicine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "neck",
+   "vocab_words": [
+    "neck"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "nose",
+   "vocab_words": [
+    "nose"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "nurse",
+   "vocab_words": [
+    "nurse"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "pain",
+   "vocab_words": [
+    "pain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "problem",
+   "vocab_words": [
+    "problem"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "rest (n)",
+   "vocab_words": [
+    "rest"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "run",
+   "vocab_words": [
+    "run"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "sick",
+   "vocab_words": [
+    "sick"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "soap",
+   "vocab_words": [
+    "soap"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "stomach",
+   "vocab_words": [
+    "stomach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "stomach ache",
+   "vocab_words": [
+    "stomach ache"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "swim",
+   "vocab_words": [
+    "swim"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "temperature",
+   "vocab_words": [
+    "temperature"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "tired",
+   "vocab_words": [
+    "tired"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "tooth",
+   "vocab_words": [
+    "tooth"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "toothache",
+   "vocab_words": [
+    "toothache"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "toothbrush",
+   "vocab_words": [
+    "toothbrush"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "walk",
+   "vocab_words": [
+    "walk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Health, Medicine and Exercise",
+   "source": "well (adj)",
+   "vocab_words": [
+    "well"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "barbecue",
+   "vocab_words": [
+    "barbecue/barbeque"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "beach",
+   "vocab_words": [
+    "beach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "bicycle",
+   "vocab_words": [
+    "bicycle"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "bike",
+   "vocab_words": [
+    "bike"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "book",
+   "vocab_words": [
+    "book"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "camera",
+   "vocab_words": [
+    "camera"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "camp",
+   "vocab_words": [
+    "camp"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "camping",
+   "vocab_words": [
+    "camping"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "campsite",
+   "vocab_words": [
+    "campsite"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "CD (player)",
+   "vocab_words": [
+    "CD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "club",
+   "vocab_words": [
+    "club"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "collect (v)",
+   "vocab_words": [
+    "collect"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "computer",
+   "vocab_words": [
+    "computer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "cycling",
+   "vocab_words": [
+    "cycling"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "dance (n & v)",
+   "vocab_words": [
+    "dance"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "draw",
+   "vocab_words": [
+    "draw"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "DVD (player)",
+   "vocab_words": [
+    "DVD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "festival",
+   "vocab_words": [
+    "festival"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "go out",
+   "vocab_words": [
+    "go out"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "go shopping",
+   "vocab_words": [
+    "go shopping"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "guitar",
+   "vocab_words": [
+    "guitar"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "hobby",
+   "vocab_words": [
+    "hobby"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "holidays",
+   "vocab_words": [
+    "holiday"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "join",
+   "vocab_words": [
+    "join"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "magazine",
+   "vocab_words": [
+    "magazine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "member",
+   "vocab_words": [
+    "member"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "museum",
+   "vocab_words": [
+    "museum"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "music",
+   "vocab_words": [
+    "music"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "musician",
+   "vocab_words": [
+    "musician"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "paint (n & v)",
+   "vocab_words": [
+    "paint"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "park",
+   "vocab_words": [
+    "park"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "party",
+   "vocab_words": [
+    "party"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "photograph (n & v)",
+   "vocab_words": [
+    "photo(graph)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "picnic",
+   "vocab_words": [
+    "picnic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "quiz",
+   "vocab_words": [
+    "quiz"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "tent",
+   "vocab_words": [
+    "tent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Hobbies and Leisure",
+   "source": "video game",
+   "vocab_words": [
+    "video game"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "address",
+   "vocab_words": [
+    "address"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "apartment",
+   "vocab_words": [
+    "apartment"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "armchair",
+   "vocab_words": [
+    "armchair"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bath(tub)",
+   "vocab_words": [
+    "bath"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bathroom",
+   "vocab_words": [
+    "bathroom"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bed",
+   "vocab_words": [
+    "bed"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bedroom",
+   "vocab_words": [
+    "bedroom"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bin",
+   "vocab_words": [
+    "bin"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "blanket",
+   "vocab_words": [
+    "blanket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bookcase",
+   "vocab_words": [
+    "bookcase"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bookshelf",
+   "vocab_words": [
+    "bookshelf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "bowl",
+   "vocab_words": [
+    "bowl"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "box",
+   "vocab_words": [
+    "box"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "carpet",
+   "vocab_words": [
+    "carpet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "chair",
+   "vocab_words": [
+    "chair"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "clock",
+   "vocab_words": [
+    "clock"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "computer",
+   "vocab_words": [
+    "computer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "cooker",
+   "vocab_words": [
+    "cooker"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "cupboard",
+   "vocab_words": [
+    "cupboard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "curtain",
+   "vocab_words": [
+    "curtain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "desk",
+   "vocab_words": [
+    "desk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "dining room",
+   "vocab_words": [
+    "dining room"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "door",
+   "vocab_words": [
+    "door"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "downstairs",
+   "vocab_words": [
+    "downstairs"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "drawer",
+   "vocab_words": [
+    "drawer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "DVD (player)",
+   "vocab_words": [
+    "DVD"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "entrance",
+   "vocab_words": [
+    "entrance"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "flat (n)",
+   "vocab_words": [
+    "flat"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "floor",
+   "vocab_words": [
+    "floor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "fridge",
+   "vocab_words": [
+    "fridge"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "furniture",
+   "vocab_words": [
+    "furniture"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "garage",
+   "vocab_words": [
+    "garage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "garden",
+   "vocab_words": [
+    "garden"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "gas",
+   "vocab_words": [
+    "gas"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "gate",
+   "vocab_words": [
+    "gate"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "hall",
+   "vocab_words": [
+    "hall"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "heating",
+   "vocab_words": [
+    "heating"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "home",
+   "vocab_words": [
+    "home"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "house",
+   "vocab_words": [
+    "house"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "key",
+   "vocab_words": [
+    "key"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "kitchen",
+   "vocab_words": [
+    "kitchen"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "lamp",
+   "vocab_words": [
+    "lamp"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "light",
+   "vocab_words": [
+    "light"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "live (v)",
+   "vocab_words": [
+    "live"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "living room",
+   "vocab_words": [
+    "living room"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "oven",
+   "vocab_words": [
+    "oven"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "pillow",
+   "vocab_words": [
+    "pillow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "refrigerator",
+   "vocab_words": [
+    "refrigerator"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "roof",
+   "vocab_words": [
+    "roof"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "room",
+   "vocab_words": [
+    "room"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "rubbish",
+   "vocab_words": [
+    "rubbish"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "safe (adj)",
+   "vocab_words": [
+    "safe"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "shelf",
+   "vocab_words": [
+    "shelf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "shower",
+   "vocab_words": [
+    "shower"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "sink",
+   "vocab_words": [
+    "sink"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "sitting room",
+   "vocab_words": [
+    "sitting room"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "sofa",
+   "vocab_words": [
+    "sofa"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "stay (v)",
+   "vocab_words": [
+    "stay"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "House and Home",
+   "source": "toilet",
+   "vocab_words": [
+    "toilet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "House and Home",
+   "source": "towel",
+   "vocab_words": [
+    "towel"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "centimetre /",
+   "vocab_words": [
+    "centimetre/centimeter (cm)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Measurements",
+   "source": "centimeter / cm",
+   "vocab_words": [
+    "centimetre/centimeter (cm)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Measurements",
+   "source": "day",
+   "vocab_words": [
+    "day"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "degree",
+   "vocab_words": [
+    "degree"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "gram(me)",
+   "vocab_words": [
+    "gram(me)"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "half",
+   "vocab_words": [
+    "half"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "hour",
+   "vocab_words": [
+    "hour"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "kilo(gram[me])/kg",
+   "vocab_words": [
+    "kilogramme (kg)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Measurements",
+   "source": "kilometre/kilometre/km",
+   "vocab_words": [
+    "kilometre (km)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Measurements",
+   "source": "litre / liter",
+   "vocab_words": [
+    "litre"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Measurements",
+   "source": "metre / meter",
+   "vocab_words": [
+    "metre"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Measurements",
+   "source": "minute",
+   "vocab_words": [
+    "minute"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "moment",
+   "vocab_words": [
+    "moment"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "quarter",
+   "vocab_words": [
+    "quarter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "second",
+   "vocab_words": [
+    "second"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "temperature",
+   "vocab_words": [
+    "temperature"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "week",
+   "vocab_words": [
+    "week"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Measurements",
+   "source": "year",
+   "vocab_words": [
+    "year"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "able",
+   "vocab_words": [
+    "able"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "afraid",
+   "vocab_words": [
+    "afraid"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "alone",
+   "vocab_words": [
+    "alone"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "amazing",
+   "vocab_words": [
+    "amazing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "angry",
+   "vocab_words": [
+    "angry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "bad",
+   "vocab_words": [
+    "bad"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "beautiful",
+   "vocab_words": [
+    "beautiful"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "better",
+   "vocab_words": [
+    "better"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "big",
+   "vocab_words": [
+    "big"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "bored",
+   "vocab_words": [
+    "bored"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "boring",
+   "vocab_words": [
+    "boring"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "brave",
+   "vocab_words": [
+    "brave"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "brilliant",
+   "vocab_words": [
+    "brilliant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "busy",
+   "vocab_words": [
+    "busy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "careful",
+   "vocab_words": [
+    "careful"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "clear",
+   "vocab_words": [
+    "clear"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "clever",
+   "vocab_words": [
+    "clever"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "cool",
+   "vocab_words": [
+    "cool"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "different",
+   "vocab_words": [
+    "different"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "difficult",
+   "vocab_words": [
+    "difficult"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "excellent",
+   "vocab_words": [
+    "excellent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "excited",
+   "vocab_words": [
+    "excited"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "famous",
+   "vocab_words": [
+    "famous"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "fast",
+   "vocab_words": [
+    "fast"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "favourite",
+   "vocab_words": [
+    "favourite"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "fine",
+   "vocab_words": [
+    "fine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "free",
+   "vocab_words": [
+    "free"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "friendly",
+   "vocab_words": [
+    "friendly"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "funny",
+   "vocab_words": [
+    "funny"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "good",
+   "vocab_words": [
+    "good"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "great",
+   "vocab_words": [
+    "great"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "happy",
+   "vocab_words": [
+    "happy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "hard",
+   "vocab_words": [
+    "hard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "heavy",
+   "vocab_words": [
+    "heavy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "high",
+   "vocab_words": [
+    "high"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "hungry",
+   "vocab_words": [
+    "hungry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "important",
+   "vocab_words": [
+    "important"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "interested",
+   "vocab_words": [
+    "interested"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "interesting",
+   "vocab_words": [
+    "interesting"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "kind",
+   "vocab_words": [
+    "kind"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "lovely",
+   "vocab_words": [
+    "lovely"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "lucky",
+   "vocab_words": [
+    "lucky"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "married",
+   "vocab_words": [
+    "married"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "modern",
+   "vocab_words": [
+    "modern"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "nice",
+   "vocab_words": [
+    "nice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "noisy",
+   "vocab_words": [
+    "noisy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "old",
+   "vocab_words": [
+    "old"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "pleasant",
+   "vocab_words": [
+    "pleasant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "poor",
+   "vocab_words": [
+    "poor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "pretty",
+   "vocab_words": [
+    "pretty"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "quick",
+   "vocab_words": [
+    "quick"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "quiet",
+   "vocab_words": [
+    "quiet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "ready",
+   "vocab_words": [
+    "ready"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "real",
+   "vocab_words": [
+    "real"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "rich",
+   "vocab_words": [
+    "rich"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "right",
+   "vocab_words": [
+    "right"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "slow",
+   "vocab_words": [
+    "slow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "small",
+   "vocab_words": [
+    "small"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "soft",
+   "vocab_words": [
+    "soft"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "sorry",
+   "vocab_words": [
+    "sorry"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "strange",
+   "vocab_words": [
+    "strange"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "strong",
+   "vocab_words": [
+    "strong"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "sure",
+   "vocab_words": [
+    "sure"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "sweet",
+   "vocab_words": [
+    "sweet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "tall",
+   "vocab_words": [
+    "tall"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "terrible",
+   "vocab_words": [
+    "terrible"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "tired",
+   "vocab_words": [
+    "tired"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "useful",
+   "vocab_words": [
+    "useful"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "well",
+   "vocab_words": [
+    "well"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "worried",
+   "vocab_words": [
+    "worried"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "wrong",
+   "vocab_words": [
+    "wrong"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Personal Feelings, Opinions and Experiences (adjectives)",
+   "source": "young",
+   "vocab_words": [
+    "young"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "apartment (building)",
+   "vocab_words": [
+    "apartment"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "bank",
+   "vocab_words": [
+    "bank"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "block",
+   "vocab_words": [
+    "block"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "bookshop",
+   "vocab_words": [
+    "bookshop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "bookstore",
+   "vocab_words": [
+    "bookstore"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "building",
+   "vocab_words": [
+    "building"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "cafe/café",
+   "vocab_words": [
+    "cafe/café"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "cafeteria",
+   "vocab_words": [
+    "cafeteria"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "castle",
+   "vocab_words": [
+    "castle"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "cinema",
+   "vocab_words": [
+    "cinema"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "college",
+   "vocab_words": [
+    "college"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "department store",
+   "vocab_words": [
+    "department store"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "disco",
+   "vocab_words": [
+    "disco"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "elevator",
+   "vocab_words": [
+    "elevator"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "entrance",
+   "vocab_words": [
+    "entrance"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "exit",
+   "vocab_words": [
+    "exit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "factory",
+   "vocab_words": [
+    "factory"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "flat",
+   "vocab_words": [
+    "flat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "garage",
+   "vocab_words": [
+    "garage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "grocery store",
+   "vocab_words": [
+    "grocery store"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "guest-house",
+   "vocab_words": [
+    "guest-house"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "hospital",
+   "vocab_words": [
+    "hospital"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "hotel",
+   "vocab_words": [
+    "hotel"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "house",
+   "vocab_words": [
+    "house"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "library",
+   "vocab_words": [
+    "library"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "lift",
+   "vocab_words": [
+    "lift"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "museum",
+   "vocab_words": [
+    "museum"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "office",
+   "vocab_words": [
+    "office"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "pharmacy",
+   "vocab_words": [
+    "pharmacy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "police station",
+   "vocab_words": [
+    "police station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "post office",
+   "vocab_words": [
+    "post office"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "railway station",
+   "vocab_words": [
+    "railway (station)"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "school",
+   "vocab_words": [
+    "school"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "shop",
+   "vocab_words": [
+    "shop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "sports centre",
+   "vocab_words": [
+    "sports centre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "stadium",
+   "vocab_words": [
+    "stadium"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "supermarket",
+   "vocab_words": [
+    "supermarket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "swimming pool",
+   "vocab_words": [
+    "swimming pool"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "theatre",
+   "vocab_words": [
+    "theatre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Buildings",
+   "source": "university",
+   "vocab_words": [
+    "university"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "area",
+   "vocab_words": [
+    "area"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "beach",
+   "vocab_words": [
+    "beach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "campsite",
+   "vocab_words": [
+    "campsite"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "farm",
+   "vocab_words": [
+    "farm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "field",
+   "vocab_words": [
+    "field"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "forest",
+   "vocab_words": [
+    "forest"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "hill",
+   "vocab_words": [
+    "hill"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "island",
+   "vocab_words": [
+    "island"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "lake",
+   "vocab_words": [
+    "lake"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "mountain",
+   "vocab_words": [
+    "mountain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "ocean",
+   "vocab_words": [
+    "ocean"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "path",
+   "vocab_words": [
+    "path"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "railway",
+   "vocab_words": [
+    "railway (station)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "rainforest",
+   "vocab_words": [
+    "rainforest"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "river",
+   "vocab_words": [
+    "river"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "sea",
+   "vocab_words": [
+    "sea"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "sky",
+   "vocab_words": [
+    "sky"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Countryside",
+   "source": "village",
+   "vocab_words": [
+    "village"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "airport",
+   "vocab_words": [
+    "airport"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "bridge",
+   "vocab_words": [
+    "bridge"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "bus station",
+   "vocab_words": [
+    "bus station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "bus stop",
+   "vocab_words": [
+    "bus stop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "car park",
+   "vocab_words": [
+    "car park"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "city centre",
+   "vocab_words": [
+    "city centre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "corner",
+   "vocab_words": [
+    "corner"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "market",
+   "vocab_words": [
+    "market"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "motorway",
+   "vocab_words": [
+    "motorway"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "park",
+   "vocab_words": [
+    "park"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "petrol station",
+   "vocab_words": [
+    "petrol station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "playground",
+   "vocab_words": [
+    "playground"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "road",
+   "vocab_words": [
+    "road"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "roundabout",
+   "vocab_words": [
+    "roundabout"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "square",
+   "vocab_words": [
+    "square"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "station",
+   "vocab_words": [
+    "station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "street",
+   "vocab_words": [
+    "street"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "town",
+   "vocab_words": [
+    "town"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "underground",
+   "vocab_words": [
+    "underground"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Places: Town and City",
+   "source": "zoo",
+   "vocab_words": [
+    "zoo"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "bank",
+   "vocab_words": [
+    "bank"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "cafe / café",
+   "vocab_words": [
+    "cafe/café"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Services",
+   "source": "cafeteria",
+   "vocab_words": [
+    "cafeteria"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "cinema",
+   "vocab_words": [
+    "cinema"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "dentist",
+   "vocab_words": [
+    "dentist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "doctor",
+   "vocab_words": [
+    "doctor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "garage",
+   "vocab_words": [
+    "garage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "hotel",
+   "vocab_words": [
+    "hotel"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "library",
+   "vocab_words": [
+    "library"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "museum",
+   "vocab_words": [
+    "museum"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "petrol station",
+   "vocab_words": [
+    "petrol station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "post office",
+   "vocab_words": [
+    "post office"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "restaurant",
+   "vocab_words": [
+    "restaurant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "sports centre",
+   "vocab_words": [
+    "sports centre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "swimming pool",
+   "vocab_words": [
+    "swimming pool"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "theatre",
+   "vocab_words": [
+    "theatre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Services",
+   "source": "tourist information",
+   "vocab_words": [
+    "tourist information centre"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Shopping",
+   "source": "ad / advertisement",
+   "vocab_words": [
+    "ad",
+    "advertisement"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "assistant",
+   "vocab_words": [
+    "assistant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "bill",
+   "vocab_words": [
+    "bill"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "bookshop",
+   "vocab_words": [
+    "bookshop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "buy (v)",
+   "vocab_words": [
+    "buy"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "cash (n & v)",
+   "vocab_words": [
+    "cash"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "cent",
+   "vocab_words": [
+    "cent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "change (n & v)",
+   "vocab_words": [
+    "change"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "cheap",
+   "vocab_words": [
+    "cheap"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "cheque",
+   "vocab_words": [
+    "cheque"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "close (v)",
+   "vocab_words": [
+    "close"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "closed",
+   "vocab_words": [
+    "closed"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "cost (n & v)",
+   "vocab_words": [
+    "cost"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "credit card",
+   "vocab_words": [
+    "credit card"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "customer",
+   "vocab_words": [
+    "customer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "department store",
+   "vocab_words": [
+    "department store"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "dollar",
+   "vocab_words": [
+    "dollar"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "euro",
+   "vocab_words": [
+    "euro"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "expensive",
+   "vocab_words": [
+    "expensive"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "for sale",
+   "vocab_words": [
+    "for sale"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "go shopping",
+   "vocab_words": [
+    "go shopping"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "open (v & adj)",
+   "vocab_words": [
+    "open"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "pay (for)",
+   "vocab_words": [
+    "pay"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "penny",
+   "vocab_words": [
+    "penny"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "pound",
+   "vocab_words": [
+    "pound (£)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Shopping",
+   "source": "price",
+   "vocab_words": [
+    "price"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "receipt",
+   "vocab_words": [
+    "receipt"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "rent",
+   "vocab_words": [
+    "rent"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "shop",
+   "vocab_words": [
+    "shop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "shop assistant",
+   "vocab_words": [
+    "shop assistant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "shopper",
+   "vocab_words": [
+    "shopper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "shopping",
+   "vocab_words": [
+    "shopping"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "spend",
+   "vocab_words": [
+    "spend"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "store",
+   "vocab_words": [
+    "store"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "supermarket",
+   "vocab_words": [
+    "supermarket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Shopping",
+   "source": "try on",
+   "vocab_words": [
+    "try on"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "ball",
+   "vocab_words": [
+    "ball"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "badminton",
+   "vocab_words": [
+    "badminton"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "baseball",
+   "vocab_words": [
+    "baseball"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "basketball",
+   "vocab_words": [
+    "basketball"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "bat",
+   "vocab_words": [
+    "bat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "bathing suit",
+   "vocab_words": [
+    "bathing suit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "beach",
+   "vocab_words": [
+    "beach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "bicycle",
+   "vocab_words": [
+    "bicycle"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "bike",
+   "vocab_words": [
+    "bike"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "boat",
+   "vocab_words": [
+    "boat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "catch (v)",
+   "vocab_words": [
+    "catch"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "climb (v)",
+   "vocab_words": [
+    "climb"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "club",
+   "vocab_words": [
+    "club"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "coach (n)",
+   "vocab_words": [
+    "coach"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "competition",
+   "vocab_words": [
+    "competition"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "cricket",
+   "vocab_words": [
+    "cricket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "cycling",
+   "vocab_words": [
+    "cycling"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "enter (a competition)",
+   "vocab_words": [
+    "enter"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "fishing",
+   "vocab_words": [
+    "fishing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "football",
+   "vocab_words": [
+    "football"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "football player",
+   "vocab_words": [
+    "football player"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "game",
+   "vocab_words": [
+    "game"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "goal",
+   "vocab_words": [
+    "goal"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "golf",
+   "vocab_words": [
+    "golf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "hockey",
+   "vocab_words": [
+    "hockey"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "kit",
+   "vocab_words": [
+    "kit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "luck",
+   "vocab_words": [
+    "luck"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "member",
+   "vocab_words": [
+    "member"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "play (v)",
+   "vocab_words": [
+    "play"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "player",
+   "vocab_words": [
+    "player"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "pool (n)",
+   "vocab_words": [
+    "pool"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "practice (n)",
+   "vocab_words": [
+    "practice"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "practise (v)",
+   "vocab_words": [
+    "practise"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "prize",
+   "vocab_words": [
+    "prize"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "race (n & v)",
+   "vocab_words": [
+    "race"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "racket",
+   "vocab_words": [
+    "racket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "rest (n & v)",
+   "vocab_words": [
+    "rest"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "ride (n & v)",
+   "vocab_words": [
+    "ride"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "riding",
+   "vocab_words": [
+    "riding"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "rugby",
+   "vocab_words": [
+    "rugby"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "run (v)",
+   "vocab_words": [
+    "run"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "sailing",
+   "vocab_words": [
+    "sailing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "sea",
+   "vocab_words": [
+    "sea"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "skate (v)",
+   "vocab_words": [
+    "skate"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "skateboard (n)",
+   "vocab_words": [
+    "skateboard"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "ski (v)",
+   "vocab_words": [
+    "ski"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "skiing",
+   "vocab_words": [
+    "skiing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "snowboard (n)",
+   "vocab_words": [
+    "snowboard"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "snowboarding",
+   "vocab_words": [
+    "snowboarding"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "soccer",
+   "vocab_words": [
+    "soccer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "sport(s)",
+   "vocab_words": [
+    "sport"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "sports centre",
+   "vocab_words": [
+    "sports centre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "stadium",
+   "vocab_words": [
+    "stadium"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "surf",
+   "vocab_words": [
+    "surf"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "surfboard",
+   "vocab_words": [
+    "surfboard"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "surfboarding",
+   "vocab_words": [
+    "surfboarding"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "swim",
+   "vocab_words": [
+    "swim"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "swimming",
+   "vocab_words": [
+    "swimming"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "swimming costume",
+   "vocab_words": [
+    "swimming costume"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "swimming pool",
+   "vocab_words": [
+    "swimming pool"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "swimsuit",
+   "vocab_words": [
+    "swimsuit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "table tennis",
+   "vocab_words": [
+    "table tennis"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "team",
+   "vocab_words": [
+    "team"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "tennis",
+   "vocab_words": [
+    "tennis"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "tennis player",
+   "vocab_words": [
+    "tennis player"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "throw (v)",
+   "vocab_words": [
+    "throw"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "ticket",
+   "vocab_words": [
+    "ticket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "tired",
+   "vocab_words": [
+    "tired"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "trainers",
+   "vocab_words": [
+    "trainer"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "v / versus",
+   "vocab_words": [
+    "v/versus"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "volleyball",
+   "vocab_words": [
+    "volleyball"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "walk (v)",
+   "vocab_words": [
+    "walk"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "watch (v)",
+   "vocab_words": [
+    "watch"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "win (v)",
+   "vocab_words": [
+    "win"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Sport",
+   "source": "windsurfing",
+   "vocab_words": [
+    "windsurfing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Sport",
+   "source": "winner",
+   "vocab_words": [
+    "winner"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "air",
+   "vocab_words": [
+    "air"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "autumn",
+   "vocab_words": [
+    "autumn"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "beach",
+   "vocab_words": [
+    "beach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "bee",
+   "vocab_words": [
+    "bee"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "country",
+   "vocab_words": [
+    "country"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "countryside",
+   "vocab_words": [
+    "countryside"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "desert",
+   "vocab_words": [
+    "desert"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "east",
+   "vocab_words": [
+    "east"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "explorer",
+   "vocab_words": [
+    "explorer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "field",
+   "vocab_words": [
+    "field"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "fire",
+   "vocab_words": [
+    "fire"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "flower",
+   "vocab_words": [
+    "flower"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "forest",
+   "vocab_words": [
+    "forest"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "grass",
+   "vocab_words": [
+    "grass"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "grow",
+   "vocab_words": [
+    "grow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "hill",
+   "vocab_words": [
+    "hill"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "hot",
+   "vocab_words": [
+    "hot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "ice",
+   "vocab_words": [
+    "ice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "island",
+   "vocab_words": [
+    "island"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "lake",
+   "vocab_words": [
+    "lake"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "moon",
+   "vocab_words": [
+    "moon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "mountain",
+   "vocab_words": [
+    "mountain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "north",
+   "vocab_words": [
+    "north"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "plant",
+   "vocab_words": [
+    "plant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "sky",
+   "vocab_words": [
+    "sky"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "south",
+   "vocab_words": [
+    "south"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "space",
+   "vocab_words": [
+    "space"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "spring",
+   "vocab_words": [
+    "spring"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "star",
+   "vocab_words": [
+    "star"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "tree",
+   "vocab_words": [
+    "tree"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "water",
+   "vocab_words": [
+    "water"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "west",
+   "vocab_words": [
+    "west"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "winter",
+   "vocab_words": [
+    "winter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "wood",
+   "vocab_words": [
+    "wood"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "wool",
+   "vocab_words": [
+    "wool"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "The Natural World",
+   "source": "world",
+   "vocab_words": [
+    "world"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "afternoon",
+   "vocab_words": [
+    "afternoon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "a.m./p.m.",
+   "vocab_words": [
+    "a.m.",
+    "p.m."
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Time",
+   "source": "appointment",
+   "vocab_words": [
+    "appointment"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "autumn",
+   "vocab_words": [
+    "autumn"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "birthday",
+   "vocab_words": [
+    "birthday"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "calendar",
+   "vocab_words": [
+    "calendar"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "century",
+   "vocab_words": [
+    "century"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "clock",
+   "vocab_words": [
+    "clock"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "daily",
+   "vocab_words": [
+    "daily"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "date",
+   "vocab_words": [
+    "date"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "day",
+   "vocab_words": [
+    "day"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "diary",
+   "vocab_words": [
+    "diary"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "evening",
+   "vocab_words": [
+    "evening"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "half (past)",
+   "vocab_words": [
+    "half"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Time",
+   "source": "holidays",
+   "vocab_words": [
+    "holiday"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Time",
+   "source": "hour",
+   "vocab_words": [
+    "hour"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "January - December",
+   "vocab_words": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Time",
+   "source": "meeting",
+   "vocab_words": [
+    "meeting"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "midnight",
+   "vocab_words": [
+    "midnight"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "minute",
+   "vocab_words": [
+    "minute"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "moment",
+   "vocab_words": [
+    "moment"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "Monday - Sunday",
+   "vocab_words": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Time",
+   "source": "month",
+   "vocab_words": [
+    "month"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "monthly",
+   "vocab_words": [
+    "monthly"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "morning",
+   "vocab_words": [
+    "morning"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "night",
+   "vocab_words": [
+    "night"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "noon",
+   "vocab_words": [
+    "noon"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "o’clock",
+   "vocab_words": [
+    "o'clock"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "past",
+   "vocab_words": [
+    "past"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "quarter (past/to)",
+   "vocab_words": [
+    "quarter"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Time",
+   "source": "second",
+   "vocab_words": [
+    "second"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "spring",
+   "vocab_words": [
+    "spring"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "summer",
+   "vocab_words": [
+    "summer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "time",
+   "vocab_words": [
+    "time"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "today",
+   "vocab_words": [
+    "today"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "tomorrow",
+   "vocab_words": [
+    "tomorrow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "tonight",
+   "vocab_words": [
+    "tonight"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "week",
+   "vocab_words": [
+    "week"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "weekday",
+   "vocab_words": [
+    "weekday"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "weekend",
+   "vocab_words": [
+    "weekend"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "weekly",
+   "vocab_words": [
+    "weekly"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "winter",
+   "vocab_words": [
+    "winter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "working hours",
+   "vocab_words": [
+    "working hours"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "year",
+   "vocab_words": [
+    "year"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Time",
+   "source": "yesterday",
+   "vocab_words": [
+    "yesterday"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "(aero)/(air)plane",
+   "vocab_words": [
+    "aeroplane"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "airport",
+   "vocab_words": [
+    "airport"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "ambulance",
+   "vocab_words": [
+    "ambulance"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "backpack",
+   "vocab_words": [
+    "backpack"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "boat",
+   "vocab_words": [
+    "boat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "bridge",
+   "vocab_words": [
+    "bridge"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "bus",
+   "vocab_words": [
+    "bus"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "bus station",
+   "vocab_words": [
+    "bus station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "bus stop",
+   "vocab_words": [
+    "bus stop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "car",
+   "vocab_words": [
+    "car"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "case",
+   "vocab_words": [
+    "case"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "coach",
+   "vocab_words": [
+    "coach"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "country",
+   "vocab_words": [
+    "country"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "delay (n & v)",
+   "vocab_words": [
+    "delay"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "delayed",
+   "vocab_words": [
+    "delayed"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "drive",
+   "vocab_words": [
+    "drive"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "driver",
+   "vocab_words": [
+    "driver"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "driving/driver’s licence",
+   "vocab_words": [
+    "driving/driver’s licence"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "engine",
+   "vocab_words": [
+    "engine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "engineer",
+   "vocab_words": [
+    "engineer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "explorer",
+   "vocab_words": [
+    "explorer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "far",
+   "vocab_words": [
+    "far"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "flight",
+   "vocab_words": [
+    "flight"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "fly",
+   "vocab_words": [
+    "fly"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "garage",
+   "vocab_words": [
+    "garage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "helicopter",
+   "vocab_words": [
+    "helicopter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "journey",
+   "vocab_words": [
+    "journey"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "leave",
+   "vocab_words": [
+    "leave"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "left",
+   "vocab_words": [
+    "left"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "light",
+   "vocab_words": [
+    "light"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "luggage",
+   "vocab_words": [
+    "luggage"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "machine",
+   "vocab_words": [
+    "machine"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "map",
+   "vocab_words": [
+    "map"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "mechanic",
+   "vocab_words": [
+    "mechanic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "mirror",
+   "vocab_words": [
+    "mirror"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "miss (v)",
+   "vocab_words": [
+    "Miss"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "motorbike",
+   "vocab_words": [
+    "motorbike"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "motorway",
+   "vocab_words": [
+    "motorway"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "move",
+   "vocab_words": [
+    "move"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "oil",
+   "vocab_words": [
+    "oil"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "park (v)",
+   "vocab_words": [
+    "park"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "passenger",
+   "vocab_words": [
+    "passenger"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "passport",
+   "vocab_words": [
+    "passport"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "petrol",
+   "vocab_words": [
+    "petrol"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "petrol station",
+   "vocab_words": [
+    "petrol station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "pilot",
+   "vocab_words": [
+    "pilot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "platform",
+   "vocab_words": [
+    "platform"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "railway",
+   "vocab_words": [
+    "railway (station)"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "repair (v)",
+   "vocab_words": [
+    "repair"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "return (n & v)",
+   "vocab_words": [
+    "return"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "ride",
+   "vocab_words": [
+    "ride"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "right",
+   "vocab_words": [
+    "right"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "road",
+   "vocab_words": [
+    "road"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "roundabout",
+   "vocab_words": [
+    "roundabout"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "sailing",
+   "vocab_words": [
+    "sailing"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "seat",
+   "vocab_words": [
+    "seat"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "ship",
+   "vocab_words": [
+    "ship"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "station",
+   "vocab_words": [
+    "station"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "stop",
+   "vocab_words": [
+    "stop"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "straight on",
+   "vocab_words": [
+    "straight"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "street",
+   "vocab_words": [
+    "street"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "suitcase",
+   "vocab_words": [
+    "suitcase"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "taxi",
+   "vocab_words": [
+    "taxi"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "ticket",
+   "vocab_words": [
+    "ticket"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tour (n)",
+   "vocab_words": [
+    "tour"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tour guide",
+   "vocab_words": [
+    "tour guide"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tourist",
+   "vocab_words": [
+    "tourist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tourist information centre",
+   "vocab_words": [
+    "tourist information centre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "traffic",
+   "vocab_words": [
+    "traffic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "traffic light",
+   "vocab_words": [
+    "traffic light"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "train",
+   "vocab_words": [
+    "train"
+   ],
+   "match_method": "alias"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tram",
+   "vocab_words": [
+    "tram"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "travel",
+   "vocab_words": [
+    "travel"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "trip",
+   "vocab_words": [
+    "trip"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "tyre",
+   "vocab_words": [
+    "tyre"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "underground (n)",
+   "vocab_words": [
+    "underground"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "visit",
+   "vocab_words": [
+    "visit"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "visitor",
+   "vocab_words": [
+    "visitor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "way (n)",
+   "vocab_words": [
+    "way"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "wheel",
+   "vocab_words": [
+    "wheel"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Travel and Transport",
+   "source": "window",
+   "vocab_words": [
+    "window"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "cloud",
+   "vocab_words": [
+    "cloud"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "cloudy",
+   "vocab_words": [
+    "cloudy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "cold",
+   "vocab_words": [
+    "cold"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "fog",
+   "vocab_words": [
+    "fog"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "foggy",
+   "vocab_words": [
+    "foggy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "hot",
+   "vocab_words": [
+    "hot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "ice",
+   "vocab_words": [
+    "ice"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "rain",
+   "vocab_words": [
+    "rain"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "snow",
+   "vocab_words": [
+    "snow"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "storm",
+   "vocab_words": [
+    "storm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "sun",
+   "vocab_words": [
+    "sun"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "sunny",
+   "vocab_words": [
+    "sunny"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "thunderstorm",
+   "vocab_words": [
+    "thunderstorm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "warm",
+   "vocab_words": [
+    "warm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "weather",
+   "vocab_words": [
+    "weather"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "wet",
+   "vocab_words": [
+    "wet"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "wind",
+   "vocab_words": [
+    "wind"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Weather",
+   "source": "windy",
+   "vocab_words": [
+    "windy"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "actor",
+   "vocab_words": [
+    "actor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "artist",
+   "vocab_words": [
+    "artist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "boss",
+   "vocab_words": [
+    "boss"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "break (n)",
+   "vocab_words": [
+    "break"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "business",
+   "vocab_words": [
+    "business"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "businessman",
+   "vocab_words": [
+    "businessman"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "businesswoman",
+   "vocab_words": [
+    "businesswoman"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "chemist",
+   "vocab_words": [
+    "chemist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "cleaner",
+   "vocab_words": [
+    "cleaner"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "coach (n)",
+   "vocab_words": [
+    "coach"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "company",
+   "vocab_words": [
+    "company"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "computer",
+   "vocab_words": [
+    "computer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "cook (n & v)",
+   "vocab_words": [
+    "cook"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "customer",
+   "vocab_words": [
+    "customer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "dentist",
+   "vocab_words": [
+    "dentist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "desk",
+   "vocab_words": [
+    "desk"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "diary",
+   "vocab_words": [
+    "diary"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "diploma",
+   "vocab_words": [
+    "diploma"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "doctor",
+   "vocab_words": [
+    "doctor"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "Dr",
+   "vocab_words": [
+    "Dr"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "driver",
+   "vocab_words": [
+    "driver"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "earn",
+   "vocab_words": [
+    "earn"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "email (n & v)",
+   "vocab_words": [
+    "email"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "engineer",
+   "vocab_words": [
+    "engineer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "explorer",
+   "vocab_words": [
+    "explorer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "factory",
+   "vocab_words": [
+    "factory"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "farm",
+   "vocab_words": [
+    "farm"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "farmer",
+   "vocab_words": [
+    "farmer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "footballer",
+   "vocab_words": [
+    "footballer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "football player",
+   "vocab_words": [
+    "football player"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "guest",
+   "vocab_words": [
+    "guest"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "guide",
+   "vocab_words": [
+    "guide"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "instructions",
+   "vocab_words": [
+    "instructions"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "job",
+   "vocab_words": [
+    "job"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "journalist",
+   "vocab_words": [
+    "journalist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "king",
+   "vocab_words": [
+    "king"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "letter",
+   "vocab_words": [
+    "letter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "manager",
+   "vocab_words": [
+    "manager"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "mechanic",
+   "vocab_words": [
+    "mechanic"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "meeting",
+   "vocab_words": [
+    "meeting"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "message",
+   "vocab_words": [
+    "message"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "musician",
+   "vocab_words": [
+    "musician"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "nurse",
+   "vocab_words": [
+    "nurse"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "occupation",
+   "vocab_words": [
+    "occupation"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "office",
+   "vocab_words": [
+    "office"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "painter",
+   "vocab_words": [
+    "painter"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "photographer",
+   "vocab_words": [
+    "photographer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "pilot",
+   "vocab_words": [
+    "pilot"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "police officer",
+   "vocab_words": [
+    "police officer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "queen",
+   "vocab_words": [
+    "queen"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "receptionist",
+   "vocab_words": [
+    "receptionist"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "secretary",
+   "vocab_words": [
+    "secretary"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "shop assistant",
+   "vocab_words": [
+    "shop assistant"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "shopper",
+   "vocab_words": [
+    "shopper"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "singer",
+   "vocab_words": [
+    "singer"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "staff",
+   "vocab_words": [
+    "staff"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "student",
+   "vocab_words": [
+    "student"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "teacher",
+   "vocab_words": [
+    "teacher"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "tennis player",
+   "vocab_words": [
+    "tennis player"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "tour guide",
+   "vocab_words": [
+    "tour guide"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "uniform",
+   "vocab_words": [
+    "uniform"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "waiter/ waitress",
+   "vocab_words": [
+    "waiter",
+    "waitress"
+   ],
+   "match_method": "variant"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "work",
+   "vocab_words": [
+    "work"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "worker",
+   "vocab_words": [
+    "worker"
+   ],
+   "match_method": "exact"
+  },
+  {
+   "topic": "Work and Jobs",
+   "source": "writer",
+   "vocab_words": [
+    "writer"
+   ],
+   "match_method": "exact"
+  }
+ ],
+ "topic_only": []
+}

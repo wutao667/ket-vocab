@@ -1,0 +1,33 @@
+[Unit]
+Description=KET Vocabulary TTS Proxy - 背单词应用语音代理
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=wutao
+WorkingDirectory=/var/www/ket-tts
+ExecStart=/usr/bin/node /var/www/ket-tts/server/tts-proxy.mjs
+Restart=always
+RestartSec=5
+
+Environment=NODE_ENV=production
+Environment=PORT=3116
+Environment=TTS_UPSTREAM=https://tx.huaguo.site
+Environment=ALLOWED_ORIGINS=https://ket.huaguo.site
+Environment=CACHE_DIR=/var/www/ket-tts/tts-cache
+Environment=CACHE_MAX_MB=200
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=true
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ket-tts
+
+[Install]
+WantedBy=multi-user.target
