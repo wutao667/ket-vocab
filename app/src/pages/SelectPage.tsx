@@ -1,5 +1,5 @@
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { ArrowLeft, Database, MousePointer2, X } from 'lucide-react'
+import { ArrowLeft, Database, MousePointer2, Trash2, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import RangeInput from '../components/RangeInput'
@@ -218,6 +218,14 @@ export default function SelectPage() {
     showUndo(`${value ? '已选择' : '已取消'} ${ids.length} 个`, snapshot)
   }
 
+  const clearAll = () => {
+    const snapshot = new Set(selectedRef.current)
+    if (!snapshot.size) return
+    clear()
+    setRangeText('')
+    showUndo(`已清除 ${snapshot.size} 个`, snapshot)
+  }
+
   const openCreate = () => { setListName(`${localDate()} KET 词表`); setShowCreate(true) }
   const createList = async () => {
     if (!listName.trim() || creating) return
@@ -232,7 +240,7 @@ export default function SelectPage() {
   }
 
   return <div className="flex h-[100dvh] flex-col bg-paper">
-    <header className="flex items-center gap-2 bg-paper px-3 py-2"><Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div><span className="rounded-full bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-brand">已选 {selected.size}</span></header>
+    <header className="flex items-center gap-2 bg-paper px-3 py-2"><Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>{selected.size > 0 && <button type="button" onClick={clearAll} aria-label={`清除已选的 ${selected.size} 个词`} className="flex h-8 shrink-0 items-center gap-1 rounded-full border border-stone-300 bg-white px-2.5 text-xs font-semibold text-stone-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700"><Trash2 size={14} />清除</button>}<span className="rounded-full bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-brand">已选 {selected.size}</span></header>
     {storageError && <div role="alert" className="flex items-start gap-2 bg-red-50 px-4 py-3 text-sm text-red-800"><Database className="mt-0.5 shrink-0" size={18} /><span>{storageError} 当前页面仍可临时使用，但刷新后可能丢失。</span><button aria-label="关闭提示" onClick={() => setStorageError('')}><X size={18} /></button></div>}
     <RangeInput total={vocabulary.length} value={rangeText} onChange={setRangeText} onApply={applyRange} />
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-stone-200 bg-stone-100 px-3 py-1 text-[11px] text-stone-500"><span className="flex items-center gap-1"><MousePointer2 size={13} />左右拖动批量选 · 上下滑动滚动 · 点击切换</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-emerald-200" />本次已选</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-amber-50 ring-1 ring-inset ring-amber-200" />已在列表</span></div>
