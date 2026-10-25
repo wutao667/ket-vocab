@@ -11,6 +11,7 @@ import FavoritesPage from './pages/FavoritesPage'
 import LearnPage from './pages/LearnPage'
 import RecallPage from './pages/RecallPage'
 import LoginPage from './pages/LoginPage'
+import UpdatePrompt from './pwa/UpdatePrompt'
 import { SpeechProvider } from './tts/SpeechProvider'
 
 function AppShell() {
@@ -23,5 +24,5 @@ function LoginGate() { const location = useLocation(); return <><LoginPage />{lo
 export default function App() {
   const [profile, setProfile] = useState(() => getActiveProfile())
   useEffect(() => { const update = () => setProfile(getActiveProfile()); window.addEventListener('ket-session-change', update); return () => window.removeEventListener('ket-session-change', update) }, [])
-  return <SpeechProvider>{profile ? <AppShell /> : <Routes><Route path="*" element={<LoginGate />} /></Routes>}</SpeechProvider>
+  return <SpeechProvider>{profile ? <AppShell /> : <Routes><Route path="*" element={<LoginGate />} /></Routes>}<UpdatePrompt /></SpeechProvider>
 }
