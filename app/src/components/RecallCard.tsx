@@ -1,6 +1,7 @@
 import { Eye, Star } from 'lucide-react'
 import type { VocabEntry } from '../data/types'
 import { SpeakButton } from './SpeechControls'
+import { ZhMeaning } from './ZhMeaning'
 
 export type RecallDirection = 'en-zh' | 'zh-en'
 
@@ -32,13 +33,13 @@ export function RecallCard({ entry, direction, revealed, favorite, onFavorite, o
       </section>
       <section className="mt-6 min-h-40 border-t border-stone-200 pt-4">
         {revealed
-          ? <div data-recall-answer className="flex min-h-40 flex-col items-center justify-center px-2"><p className="text-2xl font-bold">{entry.zh}</p><p className="mt-3 text-base leading-relaxed text-stone-500">{entry.example_zh}</p></div>
+          ? <div data-recall-answer className="flex min-h-40 flex-col items-center justify-center px-2"><p className="text-2xl font-bold"><ZhMeaning zh={entry.zh} /></p><p className="mt-3 text-base leading-relaxed text-stone-500">{entry.example_zh}</p></div>
           : <RevealPlaceholder onReveal={onReveal} />}
       </section>
     </> : <>
       <section data-recall-prompt className="px-5 pt-10">
         <p data-recall-pos className="mx-auto inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-bold tracking-wide text-slate-500">{entry.pos}</p>
-        <h2 data-recall-meaning className="mt-4 text-3xl font-black text-stone-900">{entry.zh}</h2>
+        <h2 data-recall-meaning className="mt-4 text-3xl font-black text-stone-900"><ZhMeaning zh={entry.zh} labelClassName="text-sky-600 text-xl align-middle" /></h2>
       </section>
       <section className="mt-7 min-h-56 border-t border-stone-200 pt-4">
         {revealed
