@@ -20,3 +20,9 @@ tts-cache/
 # 临时文件
 app/PHASE3-PLAN.md
 PHASE*-BRIEF.md
+
+# 临时设计/执行文档（不入库）
+SYNC-BRIEF.md
+SYNC-OFFLINE-BRIEF.md
+SYNC-BACKEND-BRIEF.md
+SYNC-FRONTEND-BRIEF.md

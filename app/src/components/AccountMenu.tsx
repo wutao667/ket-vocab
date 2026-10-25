@@ -1,0 +1,4 @@
+import { useNavigate } from 'react-router-dom'
+import { clearActiveProfile, getActiveProfile } from '../auth/session'
+import { api } from '../sync/client'
+export default function AccountMenu() { const navigate = useNavigate(), profile = getActiveProfile(); const leave = (logout: boolean) => { if (logout) void api.logout().catch(() => undefined); clearActiveProfile(); navigate('/login', { replace: true }) }; return <details className="relative"><summary className="cursor-pointer list-none rounded-full bg-stone-100 px-3 py-1 text-sm font-bold">{profile?.username}</summary><div className="absolute right-0 z-20 mt-2 w-36 rounded-xl border bg-white p-2 shadow-xl"><button onClick={() => leave(false)} className="min-h-10 w-full rounded-lg text-left px-2 hover:bg-stone-100">切换账号</button><button onClick={() => leave(true)} className="min-h-10 w-full rounded-lg px-2 text-left text-red-700 hover:bg-red-50">退出登录</button></div></details> }
