@@ -1,5 +1,6 @@
 import { openDB, type IDBPDatabase } from 'idb'
 import { DB_NAME, DB_VERSION, LEGACY_PROFILE_ID, type KetVocabDB, type OperationKind, type PendingOperation, type StudyList } from './schema'
+import { notifyDataChanged } from './events'
 
 const SELECTION_TTL = 24 * 60 * 60 * 1000
 const ACTIVE_PROFILE_KEY = 'ket-active-profile'
@@ -27,7 +28,12 @@ async function safely<T>(operation: (db: IDBPDatabase<KetVocabDB>) => Promise<T>
 const selectionKey = (profileId: string) => `temporary:${profileId}`
 const listVocabKey = (profileId: string, listId: string, vocabId: string) => `${profileId}:${listId}:${vocabId}`
 function operation(profileId: string, kind: OperationKind, entityId: string, payload: Record<string, unknown>, createdAt = Date.now()): PendingOperation { return { opId: crypto.randomUUID(), profileId, deviceId: deviceId(), kind, entityId, payload, createdAt, attemptCount: 0, nextAttemptAt: createdAt } }
-function announceLocalChange() { globalThis.dispatchEvent?.(new Event('ket-local-change')) }
+function announceLocalChange() {
+  // ket-local-change：给同步引擎用（触发上传）
+  globalThis.dispatchEvent?.(new Event('ket-local-change'))
+  // ket-data-changed：给界面用（重新读取列表/收藏）
+  notifyDataChanged()
+}
 
 export const repository = {
   async checkAvailable() { await safely(async (db) => { await db.count('lists') }, '无法读取本地数据库。') },

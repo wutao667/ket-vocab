@@ -3,11 +3,13 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { repository } from '../db/repository'
 import type { StudyList } from '../db/schema'
+import { useDataRefresh } from '../hooks/useDataRefresh'
 
 export default function HomePage() {
   const [lists, setLists] = useState<StudyList[]>([]); const [favoriteCount, setFavoriteCount] = useState(0); const [error, setError] = useState('')
+  const dataVersion = useDataRefresh()
   const load = useCallback(() => Promise.all([repository.getLists(), repository.getFavoriteIds()]).then(([value, favorites]) => { setLists(value); setFavoriteCount(new Set(favorites).size) }).catch((problem: Error) => setError(problem.message)), [])
-  useEffect(() => { void load() }, [load])
+  useEffect(() => { void load() }, [load, dataVersion])
   return <main className="mx-auto min-h-[100dvh] max-w-3xl px-5 py-8">
     <header className="flex items-end justify-between gap-4"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-brand">KET Vocabulary</p><h1 className="mt-1 text-4xl font-black tracking-tight">我的词匣</h1><p className="mt-2 text-slate-600">把今天要学的词，装进一个清晰的列表。</p></div><BookOpen className="hidden text-brand sm:block" size={52} strokeWidth={1.5} /></header>
     {error && <p role="alert" className="mt-5 rounded-xl bg-red-50 p-4 text-red-800">{error} 当前无法读取或保存列表。</p>}

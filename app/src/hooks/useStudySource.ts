@@ -2,11 +2,13 @@ import { useCallback, useEffect, useState } from 'react'
 import { entriesFor, topicOrder } from '../data/vocabulary'
 import type { VocabEntry } from '../data/types'
 import { repository } from '../db/repository'
+import { useDataRefresh } from './useDataRefresh'
 
 export interface StudySource { title: string; entries: VocabEntry[]; backTo: string; listId?: string }
 
 export function useStudySource(listId?: string, favorites = false, favoriteOnly = false) {
   const [source, setSource] = useState<StudySource | null | undefined>(undefined); const [error, setError] = useState('')
+  const dataVersion = useDataRefresh()
   const load = useCallback(async () => {
     try {
       if (favorites) {
@@ -23,6 +25,6 @@ export function useStudySource(listId?: string, favorites = false, favoriteOnly 
   }, [favoriteOnly, favorites, listId])
   // Repository reads are the external subscription for this route.
   // eslint-disable-next-line react-hooks/set-state-in-effect
-  useEffect(() => { void load() }, [load])
+  useEffect(() => { void load() }, [load, dataVersion])
   return { source, error, reload: load, sortByTopic: () => setSource((current) => current ? { ...current, entries: [...current.entries].sort((a, b) => (topicOrder.get(a.id) ?? Infinity) - (topicOrder.get(b.id) ?? Infinity)) } : current) }
 }

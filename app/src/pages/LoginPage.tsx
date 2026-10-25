@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getDeviceId, getRecentAccounts, setActiveProfile, type ActiveProfile } from '../auth/session'
 import { api } from '../sync/client'
-import { applySnapshot, legacyCounts, migrateLegacy, syncNow } from '../sync/engine'
+import { applySnapshot, clearLegacyData, legacyCounts, markMigrationHandled, migrateLegacy, syncNow } from '../sync/engine'
 
 type Lookup = { exists: boolean; username: string; userId: string | null }
 export default function LoginPage() {
@@ -15,14 +15,24 @@ export default function LoginPage() {
     try {
       const result = await api.login(lookup.username, !lookup.exists, getDeviceId()), profile = { userId: result.userId, username: result.username, lastLoginAt: Date.now() }
       setActiveProfile(profile)
-      const snapshot = await api.snapshot(), visibleRemote = snapshot.lists.some((item) => item.deletedAt == null) || snapshot.favorites.some((item) => item.present), legacy = await legacyCounts()
+      const snapshot = await api.snapshot()
+      const visibleRemote = snapshot.lists.some((item) => item.deletedAt == null) || snapshot.favorites.some((item) => item.present)
+      const legacy = await legacyCounts()
       await applySnapshot(result.userId, snapshot)
       if (legacy.lists + legacy.favorites > 0) {
-        const wording = visibleRemote ? `云端已有数据。本机还有 ${legacy.lists} 个旧列表和 ${legacy.favorites} 个旧收藏，是否合并上传？（不会删除任一边）` : `云端当前为空。本机有 ${legacy.lists} 个旧列表和 ${legacy.favorites} 个旧收藏，是否上传？`
-        if (window.confirm(wording)) await migrateLegacy(result.userId)
+        const wording = visibleRemote
+          ? `云端已有数据。本机还有 ${legacy.lists} 个旧列表和 ${legacy.favorites} 个旧收藏，是否合并上传？（不会删除任一边）`
+          : `云端当前为空。本机有 ${legacy.lists} 个旧列表和 ${legacy.favorites} 个旧收藏，是否上传？`
+        const shouldMerge = window.confirm(wording)
+        if (shouldMerge) await migrateLegacy(result.userId)
+        // 无论用户选确定还是取消，都清掉本地旧数据。
+        // 否则 legacyCounts 每次登录都大于 0，会反复弹框。
+        await clearLegacyData()
+        await markMigrationHandled(result.userId)
       }
       if (!visibleRemote && legacy.lists + legacy.favorites === 0 && recent.some((item) => item.userId !== result.userId)) window.alert('当前账号没有数据，是否输错了？')
-      void syncNow(); navigate('/', { replace: true })
+      void syncNow()
+      navigate('/', { replace: true })
     } catch (problem) { setError((problem as Error).message) } finally { setBusy(false) }
   }
   return <main className="mx-auto flex min-h-[100dvh] max-w-md flex-col justify-center px-5 py-10">

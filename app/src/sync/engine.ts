@@ -1,5 +1,6 @@
 import { database } from '../db/repository'
 import type { KetVocabDB, PendingOperation } from '../db/schema'
+import { notifyDataChanged } from '../db/events'
 import { getActiveProfile, getDeviceId, setActiveProfile, updateLastSync } from '../auth/session'
 import { api } from './client'
 import { ApiError, type Snapshot, type SyncChange, type SyncResponse } from './types'
@@ -45,6 +46,8 @@ export async function applySyncResponse(profileId: string, response: SyncRespons
   const remaining = (await tx.objectStore('pendingOps').getAll()).filter((op) => op.profileId === profileId).sort((a, b) => a.createdAt - b.createdAt)
   for (const op of remaining) await replay(tx, op)
   await tx.objectStore('syncMeta').put({ ...(await tx.objectStore('syncMeta').get(profileId)), profileId, cursor: response.cursor, lastSyncAt: Date.now() }); await tx.done
+  // 同步可能带来其他设备的改动，通知界面重新读取
+  notifyDataChanged()
   return rejected
 }
 
@@ -57,6 +60,8 @@ export async function applySnapshot(profileId: string, snapshot: Snapshot) {
   for (const item of snapshot.favorites) await tx.objectStore('favorites').put({ key: `${profileId}:${item.vocabId}`, profileId, vocabId: item.vocabId, present: item.present, sourceListId: item.sourceListId, createdAt: item.createdAt, syncState: 'synced' })
   const pending = (await tx.objectStore('pendingOps').getAll()).filter((op) => op.profileId === profileId).sort((a, b) => a.createdAt - b.createdAt); for (const op of pending) await replay(tx, op)
   await tx.objectStore('syncMeta').put({ ...(await tx.objectStore('syncMeta').get(profileId)), profileId, cursor: snapshot.cursor, lastSyncAt: Date.now() }); await tx.done
+  // 快照落地后必须通知界面，否则登录后会停在空列表
+  notifyDataChanged()
 }
 
 let running = false
@@ -101,6 +106,41 @@ export function startSyncTriggers() {
 
 export async function stableMigrationOpId(userId: string, kind: string, legacyKey: string) { const bytes = new TextEncoder().encode(`migration-v1\0${userId}${kind}${legacyKey}`), hash = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)); return [...hash].map((value) => value.toString(16).padStart(2, '0')).join('') }
 export async function legacyCounts() { const db = await database(); return { lists: (await db.getAllFromIndex('lists', 'by-profile', 'default')).filter((x) => x.deletedAt == null).length, favorites: (await db.getAllFromIndex('favorites', 'by-profile', 'default')).filter((x) => x.present !== false).length } }
+
+/**
+ * 清除 legacy（profileId='default'）的旧列表与旧收藏。
+ *
+ * 用户明确要求：合并提示只在第一次出现，选「确定」或「取消」之后都要清掉本地旧数据，
+ * 否则每次登录都会重复询问。
+ *
+ * 只删 legacy 分区的数据，不动任何已登录账号（userId）的数据。
+ */
+export async function clearLegacyData() {
+  const db = await database()
+  const tx = db.transaction(['lists', 'favorites', 'listVocab', 'selections'], 'readwrite')
+
+  for (const item of await tx.objectStore('lists').index('by-profile').getAll('default')) {
+    await tx.objectStore('lists').delete(item.id)
+  }
+  for (const item of await tx.objectStore('favorites').index('by-profile').getAll('default')) {
+    await tx.objectStore('favorites').delete(item.key)
+  }
+  for (const item of await tx.objectStore('listVocab').getAll()) {
+    if (item.profileId === 'default') await tx.objectStore('listVocab').delete(item.key)
+  }
+  // 临时选择也一并清掉，避免草稿指向已删除的旧列表
+  await tx.objectStore('selections').delete('temporary:default')
+
+  await tx.done
+}
+
+/** 记录「迁移提示已处理过」，避免同一账号再次弹出 */
+export async function markMigrationHandled(userId: string) {
+  const db = await database()
+  const meta = await db.get('syncMeta', userId)
+  await db.put('syncMeta', { ...meta, profileId: userId, cursor: meta?.cursor ?? 0, migrationVersion: 1 })
+}
+
 export async function migrateLegacy(userId: string) {
   const db = await database(), meta = await db.get('syncMeta', userId); if (meta?.migrationVersion === 1) return
   const legacyLists = (await db.getAllFromIndex('lists', 'by-profile', 'default')).filter((x) => x.deletedAt == null), legacyFavorites = (await db.getAllFromIndex('favorites', 'by-profile', 'default')).filter((x) => x.present !== false), deviceId = getDeviceId()

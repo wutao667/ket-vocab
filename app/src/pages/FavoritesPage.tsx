@@ -5,11 +5,13 @@ import { topicOrder, vocabById } from '../data/vocabulary'
 import type { FavoriteRecord, StudyList } from '../db/schema'
 import { repository } from '../db/repository'
 import { ZhMeaning } from '../components/ZhMeaning'
+import { useDataRefresh } from '../hooks/useDataRefresh'
 
 export default function FavoritesPage() {
   const [records, setRecords] = useState<FavoriteRecord[]>([]); const [lists, setLists] = useState<StudyList[]>([]); const [order, setOrder] = useState<'recent' | 'topic'>('recent'); const [error, setError] = useState('')
+  const dataVersion = useDataRefresh()
   const load = useCallback(() => Promise.all([repository.getFavoriteRecords(), repository.getLists()]).then(([favorites, value]) => { setRecords(favorites); setLists(value) }).catch((problem: Error) => setError(problem.message)), [])
-  useEffect(() => { void load() }, [load])
+  useEffect(() => { void load() }, [load, dataVersion])
   const listNames = useMemo(() => new Map(lists.map((list) => [list.id, list.name])), [lists])
   const sorted = useMemo(() => [...records].sort(order === 'recent' ? (a, b) => b.createdAt - a.createdAt : (a, b) => (topicOrder.get(a.vocabId) ?? Infinity) - (topicOrder.get(b.vocabId) ?? Infinity)), [order, records])
   const remove = async (id: string) => { try { await repository.setFavorite(id, false); setRecords((current) => current.filter((item) => item.vocabId !== id)) } catch (problem) { setError((problem as Error).message) } }

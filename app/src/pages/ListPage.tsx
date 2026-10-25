@@ -7,6 +7,7 @@ import vocabJson from '../data/vocab.json'
 import type { VocabEntry } from '../data/types'
 import { repository } from '../db/repository'
 import type { StudyList } from '../db/schema'
+import { useDataRefresh } from '../hooks/useDataRefresh'
 
 const vocabulary = vocabJson as VocabEntry[]
 const vocabById = new Map(vocabulary.map((entry) => [entry.id, entry]))
@@ -18,7 +19,8 @@ export default function ListPage() {
   const [list, setList] = useState<StudyList | null | undefined>(undefined); const [error, setError] = useState(''); const [editing, setEditing] = useState(false); const [name, setName] = useState('')
   const [toast, setToast] = useState<ToastMessage | null>(() => createdSelection ? { id: 1, text: `已创建列表并清空 ${createdSelection.length} 个临时选择`, duration: 5000, actionLabel: '撤销', onAction: () => { Promise.all([repository.deleteList(listId), repository.saveSelection(createdSelection)]).then(() => navigate('/select', { replace: true })).catch((problem: Error) => setError(problem.message)) } } : null)
   const load = useCallback(() => repository.getList(listId).then((value) => { setList(value ?? null); if (value) setName(value.name) }).catch((problem: Error) => setError(problem.message)), [listId])
-  useEffect(() => { void load() }, [load])
+  const dataVersion = useDataRefresh()
+  useEffect(() => { void load() }, [load, dataVersion])
   useEffect(() => {
     if (!createdSelection) return
     navigate(location.pathname, { replace: true, state: null })
