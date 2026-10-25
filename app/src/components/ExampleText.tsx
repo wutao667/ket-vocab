@@ -1,6 +1,6 @@
 import { splitExample } from './exampleHighlight'
 
-export function ExampleText({ example, word, className = '', hitClassName = 'rounded bg-amber-200/70 px-0.5 font-semibold text-stone-900' }: {
+export function ExampleText({ example, word, className = '', hitClassName = 'bg-transparent font-bold text-red-800' }: {
   example: string
   word: string
   className?: string
