@@ -1,5 +1,6 @@
 import { Eye, Star } from 'lucide-react'
 import type { VocabEntry } from '../data/types'
+import { ExampleText } from './ExampleText'
 import { SpeakButton } from './SpeechControls'
 import { ZhMeaning } from './ZhMeaning'
 
@@ -29,7 +30,7 @@ export function RecallCard({ entry, direction, revealed, favorite, onFavorite, o
         <h2 data-recall-word className="text-4xl font-black">{entry.word}</h2>
         <p className="mt-3 text-lg text-stone-500">{entry.ipa}</p>
         <div className="mt-4 flex justify-center"><SpeakButton id={`recall:${entry.id}`} text={entry.word} label="英文" /></div>
-        <p className="mt-5 text-lg leading-relaxed text-stone-700">{entry.example}</p>
+        <p className="mt-5 text-lg leading-relaxed text-stone-700"><ExampleText example={entry.example} word={entry.word} /></p>
       </section>
       <section className="mt-6 min-h-40 border-t border-stone-200 pt-4">
         {revealed
@@ -43,7 +44,7 @@ export function RecallCard({ entry, direction, revealed, favorite, onFavorite, o
       </section>
       <section className="mt-7 min-h-56 border-t border-stone-200 pt-4">
         {revealed
-          ? <div data-recall-answer className="flex min-h-56 flex-col items-center justify-center px-2"><p data-recall-word className="text-4xl font-black">{entry.word}</p><p className="mt-2 text-lg text-stone-500">{entry.ipa}</p><div className="mt-4 flex justify-center"><SpeakButton id={`recall:${entry.id}`} text={entry.word} label="英文" /></div><p className="mt-5 text-lg leading-relaxed">{entry.example}</p><p className="mt-2 text-sm leading-relaxed text-stone-500">{entry.example_zh}</p></div>
+          ? <div data-recall-answer className="flex min-h-56 flex-col items-center justify-center px-2"><p data-recall-word className="text-4xl font-black">{entry.word}</p><p className="mt-2 text-lg text-stone-500">{entry.ipa}</p><div className="mt-4 flex justify-center"><SpeakButton id={`recall:${entry.id}`} text={entry.word} label="英文" /></div><p className="mt-5 text-lg leading-relaxed"><ExampleText example={entry.example} word={entry.word} /></p><p className="mt-2 text-sm leading-relaxed text-stone-500">{entry.example_zh}</p></div>
           : <RevealPlaceholder onReveal={onReveal} />}
       </section>
     </>}
