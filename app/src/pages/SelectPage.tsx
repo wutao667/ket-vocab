@@ -1,6 +1,6 @@
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowLeft, Database, MousePointer2, Trash2, X } from 'lucide-react'
-import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import RangeInput from '../components/RangeInput'
 import Toast, { type ToastMessage } from '../components/Toast'
@@ -15,6 +15,7 @@ import { buildGridItems, type GridItem } from '../selection/grid'
 
 const vocabulary = vocabJson as VocabEntry[]
 const gridItems = buildGridItems(vocabulary)
+const wordIndexById = new Map(vocabulary.map((entry, index) => [entry.id, index]))
 const itemIndexByWordIndex = gridItems.reduce<number[]>((lookup, item, itemIndex) => {
   if (item.type === 'row') item.words.forEach((_, offset) => { lookup[item.startIndex + offset] = itemIndex })
   return lookup
@@ -53,8 +54,28 @@ export default function SelectPage() {
   const [showCreate, setShowCreate] = useState(false)
   const [listName, setListName] = useState('')
   const [creating, setCreating] = useState(false)
-  // 序号范围输入框的文本由页面持有，滑动选择结束后可直接回填。
-  const [rangeText, setRangeText] = useState('')
+  // 范围框默认显示「全部已选词」的最小/最大序号；
+  // 用户手动输入后先显示手输内容，但一旦选择变化（派生值改变），
+  // 手输内容自动失效、回到自动区间。用「记录手输时对应的派生值」实现，
+  // 不需要 effect，也不会触发 set-state-in-effect。
+  const [manualRange, setManualRange] = useState<{ text: string; forDerived: string } | null>(null)
+  const derivedRange = useMemo(() => {
+    if (!selected.size) return ''
+    let min = Infinity
+    let max = -Infinity
+    for (const id of selected) {
+      const index = wordIndexById.get(id)
+      if (index === undefined) continue
+      if (index < min) min = index
+      if (index > max) max = index
+    }
+    if (min === Infinity) return ''
+    const from = min + 1
+    const to = max + 1
+    return from === to ? String(from) : `${from}-${to}`
+  }, [selected])
+  const rangeText = manualRange && manualRange.forDerived === derivedRange ? manualRange.text : derivedRange
+  const updateRangeText = (next: string) => setManualRange({ text: next, forDerived: derivedRange })
   // 已经在别的背诵列表里的词：给个淡底色，避免重复挑选。
   const [inListIds, setInListIds] = useState<Set<string>>(new Set())
 
@@ -145,12 +166,7 @@ export default function SelectPage() {
     cancelAnimationFrame(animationRef.current)
     if (gesture.changed) {
       showUndo(`${gesture.target ? '已选择' : '已取消'} ${gesture.changed} 个`, gesture.snapshot)
-      // 把本次滑过的区间回填到序号框（界面用 1 起始的序号）
-      if (gesture.minIndex !== Infinity && gesture.maxIndex !== -Infinity) {
-        const from = gesture.minIndex + 1
-        const to = gesture.maxIndex + 1
-        setRangeText(from === to ? String(from) : `${from}-${to}`)
-      }
+      // 范围框由全部已选词派生（见 derivedRange），这里无需手动回填
     }
   }, [showUndo])
 
@@ -222,7 +238,7 @@ export default function SelectPage() {
     const snapshot = new Set(selectedRef.current)
     if (!snapshot.size) return
     clear()
-    setRangeText('')
+    setManualRange(null)
     showUndo(`已清除 ${snapshot.size} 个`, snapshot)
   }
 
@@ -242,7 +258,7 @@ export default function SelectPage() {
   return <div className="flex h-[100dvh] flex-col bg-paper">
     <header className="flex items-center gap-2 bg-paper px-3 py-2"><Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>{selected.size > 0 && <button type="button" onClick={clearAll} aria-label={`清除已选的 ${selected.size} 个词`} className="flex h-8 shrink-0 items-center gap-1 rounded-full border border-stone-300 bg-white px-2.5 text-xs font-semibold text-stone-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700"><Trash2 size={14} />清除</button>}<span className="rounded-full bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-brand">已选 {selected.size}</span></header>
     {storageError && <div role="alert" className="flex items-start gap-2 bg-red-50 px-4 py-3 text-sm text-red-800"><Database className="mt-0.5 shrink-0" size={18} /><span>{storageError} 当前页面仍可临时使用，但刷新后可能丢失。</span><button aria-label="关闭提示" onClick={() => setStorageError('')}><X size={18} /></button></div>}
-    <RangeInput total={vocabulary.length} value={rangeText} onChange={setRangeText} onApply={applyRange} />
+    <RangeInput total={vocabulary.length} value={rangeText} onChange={updateRangeText} onApply={applyRange} />
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-stone-200 bg-stone-100 px-3 py-1 text-[11px] text-stone-500"><span className="flex items-center gap-1"><MousePointer2 size={13} />左右拖动批量选 · 上下滑动滚动 · 点击切换</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-emerald-200" />本次已选</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-amber-50 ring-1 ring-inset ring-amber-200" />已在列表</span></div>
     <div ref={scrollRef} data-vocab-scroll className="min-h-0 flex-1 overflow-auto overscroll-contain" style={{ touchAction: 'pan-y' }}>
       <div className="relative mx-auto w-full max-w-5xl" style={{ height: virtualizer.getTotalSize() }}>
