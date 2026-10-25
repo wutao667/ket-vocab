@@ -3,6 +3,22 @@ export type CloudEngine = typeof CLOUD_ENGINES[number]
 export type TTSEngine = CloudEngine | 'local'
 export const DEFAULT_VOICE = 'en-GB-SoniaNeural'
 export const TTS_BASE = import.meta.env.VITE_TTS_BASE ?? '/tts'
+
+/**
+ * 各引擎的音色标识格式完全不同，不能共用一个值：
+ *   edge    → 音色名字符串（en-GB-SoniaNeural）
+ *   tencent → 整数音色 ID（1051 为英式女声）
+ *   glm     → 音色名（female / male）
+ *   minimax → 上游写死了音色，不传该参数
+ * 传错格式会直接 400，这就是之前「除 edge 都不出声」的真正原因。
+ */
+export const VOICE_BY_ENGINE: Record<CloudEngine, string> = {
+  edge: DEFAULT_VOICE,
+  tencent: '1051',
+  glm: 'female',
+  minimax: '',
+}
+
 const failedEngines = new Set<CloudEngine>()
 
 export interface SpeakOptions { engine: TTSEngine; speed: number; signal?: AbortSignal; timeoutMs?: number }
@@ -19,7 +35,7 @@ async function cloudSpeak(text: string, engine: CloudEngine, speed: number, sign
   signal?.addEventListener('abort', onAbort, { once: true })
   const timer = setTimeout(() => controller.abort(new Error(`${engine} 请求超时`)), timeoutMs)
   try {
-    const response = await fetch(`${TTS_BASE}/api/tts`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, engine, voice: DEFAULT_VOICE, speed }), signal: controller.signal })
+    const response = await fetch(`${TTS_BASE}/api/tts`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, engine, voice: VOICE_BY_ENGINE[engine], speed }), signal: controller.signal })
     if (!response.ok) throw new Error(`${engine} 朗读服务不可用 (${response.status})`)
     const blob = await response.blob()
     if (signal?.aborted) throw abortError()

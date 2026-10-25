@@ -177,17 +177,40 @@ async function handleTts(req, res, origin) {
     }, 2, 25000);
 
     const ctype = r.headers.get('content-type') || '';
-    if (!r.ok || !ctype.includes('audio')) {
+
+    // 上游各引擎的返回格式不一致：
+    //   edge / tencent / glm  → 直接是二进制音频（audio/mpeg、audio/wav）
+    //   minimax               → JSON 里包着 base64 的音频数据
+    // 所以不能只看 content-type，要先判断是不是「JSON 包音频」。
+    let buf;
+    if (ctype.includes('application/json')) {
+      let payload = null;
+      try { payload = await r.json(); } catch { /* ignore */ }
+
+      const base64Audio = typeof payload?.audio === 'string' ? payload.audio : '';
+      if (r.ok && base64Audio) {
+        buf = Buffer.from(base64Audio, 'base64');
+      } else {
+        // 真正的错误：把上游返回原样透出，方便排查
+        const detail = payload ? JSON.stringify(payload) : '（响应不是合法 JSON）';
+        return json(res, r.ok ? 502 : r.status, origin, {
+          error: `上游 ${engine} 失败`,
+          status: r.status,
+          detail: detail.slice(0, 300),
+        });
+      }
+    } else if (!r.ok || !ctype.includes('audio')) {
       let detail = '';
       try { detail = await r.text(); } catch { /* ignore */ }
       return json(res, r.ok ? 502 : r.status, origin, {
         error: `上游 ${engine} 失败`,
         status: r.status,
-        detail: detail.slice(0, 200),
+        detail: detail.slice(0, 300),
       });
+    } else {
+      buf = Buffer.from(await r.arrayBuffer());
     }
 
-    const buf = Buffer.from(await r.arrayBuffer());
     if (buf.length === 0) {
       return json(res, 502, origin, { error: '上游返回空音频' });
     }
