@@ -21,6 +21,49 @@ export const VOICE_BY_ENGINE: Record<CloudEngine, string> = {
 
 const failedEngines = new Set<CloudEngine>()
 
+/**
+ * 已合成音频的本地缓存（Blob URL）。
+ *
+ * 为什么需要：同一段文本反复朗读（背诵时点同一个词好几次）每次都打一次
+ * 上游，既慢又费额度。缓存后第二次点击可以立刻出声。
+ *
+ * 用 Map 的插入顺序做 LRU：命中的条目重新插入以刷新位置，
+ * 超过上限时淘汰最久未用的并释放它的 Blob URL，避免内存泄漏。
+ */
+const audioCache = new Map<string, string>()
+const AUDIO_CACHE_LIMIT = 40
+
+function cacheKey(engine: CloudEngine, speed: number, text: string) {
+  return `${engine}\u0000${speed}\u0000${text}`
+}
+
+function rememberAudio(key: string, url: string) {
+  audioCache.set(key, url)
+  while (audioCache.size > AUDIO_CACHE_LIMIT) {
+    const oldest = audioCache.keys().next().value as string | undefined
+    if (oldest === undefined) break
+    const staleUrl = audioCache.get(oldest)
+    audioCache.delete(oldest)
+    if (staleUrl) URL.revokeObjectURL(staleUrl)
+  }
+}
+
+/** 取缓存并把该条刷新为最近使用 */
+function takeAudio(key: string): string | null {
+  const url = audioCache.get(key)
+  if (!url) return null
+  audioCache.delete(key)
+  audioCache.set(key, url)
+  return url
+}
+
+export function audioCacheSize() { return audioCache.size }
+
+export function clearAudioCache() {
+  for (const url of audioCache.values()) URL.revokeObjectURL(url)
+  audioCache.clear()
+}
+
 export interface SpeakOptions { engine: TTSEngine; speed: number; signal?: AbortSignal; timeoutMs?: number }
 export interface SpeakResult { requested: TTSEngine; engineUsed: TTSEngine }
 
@@ -29,7 +72,29 @@ export function isLocalTTSSupported() {
   return typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined' && window.speechSynthesis.getVoices().length > 0
 }
 
+/** 播放一个已就绪的音频 URL。不在此处 revoke —— URL 由缓存持有。 */
+async function playUrl(url: string, signal?: AbortSignal) {
+  await new Promise<void>((resolve, reject) => {
+    const audio = new Audio(url)
+    const stop = () => { audio.pause(); audio.currentTime = 0; reject(abortError()) }
+    signal?.addEventListener('abort', stop, { once: true })
+    audio.onended = () => { signal?.removeEventListener('abort', stop); resolve() }
+    audio.onerror = () => { signal?.removeEventListener('abort', stop); reject(new Error('音频播放失败')) }
+    audio.play().catch(reject)
+  })
+}
+
 async function cloudSpeak(text: string, engine: CloudEngine, speed: number, signal?: AbortSignal, timeoutMs = 8000) {
+  const key = cacheKey(engine, speed, text)
+
+  // 命中缓存：不发请求，直接播
+  const cachedUrl = takeAudio(key)
+  if (cachedUrl) {
+    if (signal?.aborted) throw abortError()
+    await playUrl(cachedUrl, signal)
+    return
+  }
+
   const controller = new AbortController()
   const onAbort = () => controller.abort(signal?.reason)
   signal?.addEventListener('abort', onAbort, { once: true })
@@ -40,16 +105,9 @@ async function cloudSpeak(text: string, engine: CloudEngine, speed: number, sign
     const blob = await response.blob()
     if (signal?.aborted) throw abortError()
     const url = URL.createObjectURL(blob)
-    try {
-      await new Promise<void>((resolve, reject) => {
-        const audio = new Audio(url)
-        const stop = () => { audio.pause(); audio.currentTime = 0; reject(abortError()) }
-        signal?.addEventListener('abort', stop, { once: true })
-        audio.onended = () => { signal?.removeEventListener('abort', stop); resolve() }
-        audio.onerror = () => { signal?.removeEventListener('abort', stop); reject(new Error(`${engine} 音频播放失败`)) }
-        audio.play().catch(reject)
-      })
-    } finally { URL.revokeObjectURL(url) }
+    // 存入缓存后播放；URL 交给缓存管理，播放结束不释放
+    rememberAudio(key, url)
+    await playUrl(url, signal)
   } catch (error) {
     if (signal?.aborted) throw abortError()
     if (error instanceof DOMException && error.name === 'AbortError' && controller.signal.reason instanceof Error) throw controller.signal.reason
@@ -96,4 +154,4 @@ export async function speakWithFallback(text: string, options: SpeakOptions): Pr
   throw lastError
 }
 
-export function resetTTSFailuresForTests() { failedEngines.clear() }
+export function resetTTSFailuresForTests() { failedEngines.clear(); clearAudioCache() }
