@@ -1,16 +1,89 @@
 import { ArrowLeft } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { SpeakButton, SpeechSettings } from '../components/SpeechControls'
+import FavoriteButton from '../components/FavoriteButton'
 import { ExampleText } from '../components/ExampleText'
+import { SpeakButton, SpeechSettings } from '../components/SpeechControls'
 import { ZhMeaning } from '../components/ZhMeaning'
+import { repository } from '../db/repository'
 import { useStudySource } from '../hooks/useStudySource'
 
 export default function LearnPage({ favorites = false }: { favorites?: boolean }) {
-  const { listId } = useParams(); const { source, error } = useStudySource(listId, favorites)
+  const { listId } = useParams()
+  const { source, error } = useStudySource(listId, favorites)
+  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set())
+
+  useEffect(() => {
+    void repository.getFavoriteIds()
+      .then((ids) => setFavoriteIds(new Set(ids)))
+      .catch(() => undefined)
+  }, [])
+
+  // 取出稳定的 listId：直接写 source?.listId 会让 React Compiler 推断
+  // 依赖为整个 source，与手写依赖不一致而报错
+  const sourceListId = source?.listId
+
+  // 用 ref 镜像状态：setState 的更新函数是延迟执行的，
+  // 在里面给外部变量赋值会导致写库时拿到旧值（曾因此把「标记」写成「取消」）
+  const favoriteIdsRef = useRef<Set<string>>(new Set())
+  useEffect(() => { favoriteIdsRef.current = favoriteIds }, [favoriteIds])
+
+  // 乐观更新：先改本地状态让星标立刻响应，写库失败再回滚
+  const toggleFavorite = useCallback(async (entryId: string) => {
+    const snapshot = favoriteIdsRef.current
+    const next = !snapshot.has(entryId)
+
+    const updated = new Set(snapshot)
+    if (next) updated.add(entryId)
+    else updated.delete(entryId)
+    favoriteIdsRef.current = updated
+    setFavoriteIds(updated)
+
+    try {
+      await repository.setFavorite(entryId, next, undefined, sourceListId)
+    } catch {
+      // 回滚到点击前的快照
+      favoriteIdsRef.current = snapshot
+      setFavoriteIds(snapshot)
+    }
+  }, [sourceListId])
+
   if (source === undefined) return <main className="p-8 text-center text-stone-500">正在准备学习内容…</main>
   if (!source) return <main className="p-8 text-center"><p>{error || '列表不存在'}</p><Link to="/" className="text-brand underline">返回首页</Link></main>
-  return <main className="mx-auto min-h-[100dvh] max-w-3xl px-4 py-5"><header className="flex items-center gap-3"><Link to={source.backTo} aria-label="退出学习" className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div><p className="text-sm font-bold text-brand">学习模式</p><h1 className="text-2xl font-black">{source.title}</h1></div></header>
-    <div className="mt-5"><SpeechSettings /></div>{error && <p role="alert" className="mt-3 text-red-700">{error}</p>}
-    {source.entries.length === 0 ? <div className="mt-8 rounded-2xl border-2 border-dashed p-10 text-center text-stone-500">这里还没有词条。</div> : <ol className="mt-5 space-y-4">{source.entries.map((entry, index) => <li key={entry.id} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"><p className="text-xs font-bold text-stone-400">{index + 1} / {source.entries.length}</p><div className="mt-1 flex flex-wrap items-baseline gap-x-3"><h2 className="text-2xl font-black">{entry.word}</h2><span className="text-stone-500">{entry.ipa}</span><span className="rounded bg-emerald-50 px-2 py-0.5 text-sm text-emerald-800">{entry.pos}</span></div><p className="mt-2 text-lg"><ZhMeaning zh={entry.zh} /></p><div className="mt-4 border-l-4 border-amber-300 pl-3"><p><ExampleText example={entry.example} word={entry.word} /></p><p className="mt-1 text-sm text-stone-500">{entry.example_zh}</p></div><div className="mt-4 flex gap-2"><SpeakButton id={`${entry.id}:word`} text={entry.word} label="单词" /><SpeakButton id={`${entry.id}:example`} text={entry.example} label="例句" /></div></li>)}</ol>}
+
+  return <main className="mx-auto min-h-[100dvh] max-w-3xl px-4 py-5">
+    <header className="flex items-center gap-3">
+      <Link to={source.backTo} aria-label="退出学习" className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link>
+      <div><p className="text-sm font-bold text-brand">学习模式</p><h1 className="text-2xl font-black">{source.title}</h1></div>
+    </header>
+
+    <div className="mt-5"><SpeechSettings /></div>
+    {error && <p role="alert" className="mt-3 text-red-700">{error}</p>}
+
+    {source.entries.length === 0
+      ? <div className="mt-8 rounded-2xl border-2 border-dashed p-10 text-center text-stone-500">这里还没有词条。</div>
+      : <ol className="mt-5 space-y-4">{source.entries.map((entry, index) => {
+        const marked = favoriteIds.has(entry.id)
+        return <li key={entry.id} data-learn-card={entry.id} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+          <div className="flex items-start gap-2">
+            <p className="flex-1 text-xs font-bold text-stone-400">{index + 1} / {source.entries.length}</p>
+            <FavoriteButton active={marked} onToggle={() => void toggleFavorite(entry.id)} size="sm" />
+          </div>
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-3">
+            <h2 className="text-2xl font-black">{entry.word}</h2>
+            <span className="text-stone-500">{entry.ipa}</span>
+            <span className="rounded bg-emerald-50 px-2 py-0.5 text-sm text-emerald-800">{entry.pos}</span>
+          </div>
+          <p className="mt-2 text-lg"><ZhMeaning zh={entry.zh} /></p>
+          <div className="mt-4 border-l-4 border-amber-300 pl-3">
+            <p><ExampleText example={entry.example} word={entry.word} /></p>
+            <p className="mt-1 text-sm text-stone-500">{entry.example_zh}</p>
+          </div>
+          <div className="mt-4 flex gap-2">
+            <SpeakButton id={`${entry.id}:word`} text={entry.word} label="单词" />
+            <SpeakButton id={`${entry.id}:example`} text={entry.example} label="例句" />
+          </div>
+        </li>
+      })}</ol>}
   </main>
 }
