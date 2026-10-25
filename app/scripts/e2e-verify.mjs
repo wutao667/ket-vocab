@@ -190,13 +190,13 @@ async function main() {
   check('松手后批量开关保持开启', remainsOn === 'true', remainsOn);
 
   // 6. 全局范围输入
-  await setRange(cdp, '1-20'); await clickButton(cdp, '加入选择');
+  await setRange(cdp, '1-20'); await clickButton(cdp, '连续选中');
   check('范围 1-20 选中 20 个', await selectedCount(cdp) === 20, `选中 ${await selectedCount(cdp)}`);
-  await setRange(cdp, '20-1'); await clickButton(cdp, '加入选择');
+  await setRange(cdp, '20-1'); await clickButton(cdp, '连续选中');
   const rangeError = await cdp.eval(`document.querySelector('[role="alert"]')?.textContent || ''`);
   check('反向范围显示具体错误', rangeError.includes('不能大于'), JSON.stringify(rangeError));
-  await setRange(cdp, '1-20'); await clickButton(cdp, '加入选择');
-  await setRange(cdp, '1700-1723'); await clickButton(cdp, '加入选择');
+  await setRange(cdp, '1-20'); await clickButton(cdp, '连续选中');
+  await setRange(cdp, '1700-1723'); await clickButton(cdp, '连续选中');
   check('范围 1700-1723 追加后选中 24 个', await selectedCount(cdp) === 24, `选中 ${await selectedCount(cdp)}`);
 
   // 7. 滚至末尾，确认最后词与不足 10 格的末行

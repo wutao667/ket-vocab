@@ -36,7 +36,7 @@ export default function RangeInput({ total, value, onChange, onApply }: {
           aria-invalid={Boolean(error)}
         />
       </label>
-      <button onClick={submit} className="min-h-10 rounded-lg bg-brand px-4 text-sm font-semibold text-white">加入选择</button>
+      <button onClick={submit} className="min-h-10 rounded-lg bg-brand px-4 text-sm font-semibold text-white">连续选中</button>
       {error && <p role="alert" className="w-full text-sm text-red-700">{error}</p>}
     </div>
   </section>
