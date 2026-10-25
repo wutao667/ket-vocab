@@ -32,7 +32,14 @@ for (const entry of vocab) {
 }
 frozen.entries = entries
 
-const generatedVocab = vocab.map((entry) => ({ id: frozen.entries[entry.word], ...entry }))
+// 只保留运行时真正用到的字段。
+// source_* 是构建期的溯源信息，界面从不读取，留着会让首屏包大 140KB+。
+const RUNTIME_FIELDS = ['word', 'pos', 'ipa', 'zh', 'example', 'example_zh']
+const generatedVocab = vocab.map((entry) => {
+  const runtime = {}
+  for (const field of RUNTIME_FIELDS) runtime[field] = entry[field] ?? ''
+  return { id: frozen.entries[entry.word], ...runtime }
+})
 const idsByWord = new Map()
 for (const entry of generatedVocab) {
   const bucket = idsByWord.get(entry.word) ?? []

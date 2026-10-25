@@ -4,7 +4,7 @@ import type { VocabEntry } from '../data/types'
 import { SpeechProvider } from '../tts/SpeechProvider'
 import { RecallCard } from './RecallCard'
 
-const entry: VocabEntry = { id: 'ket-test', word: 'secret word', ipa: '/secret ipa/', pos: 'v.', zh: '秘密释义', example: 'Secret example.', example_zh: '秘密例句。', source_ipa: '', source_example: '', source_example_zh: '' }
+const entry: VocabEntry = { id: 'ket-test', word: 'secret word', ipa: '/secret ipa/', pos: 'v.', zh: '秘密释义', example: 'Secret example.', example_zh: '秘密例句。' }
 beforeEach(() => vi.stubGlobal('localStorage', { getItem: () => null, setItem: () => undefined }))
 function render(direction: 'en-zh' | 'zh-en', revealed: boolean) {
   return renderToStaticMarkup(<SpeechProvider><RecallCard entry={entry} direction={direction} revealed={revealed} favorite={false} onFavorite={() => undefined} onReveal={() => undefined} /></SpeechProvider>)
