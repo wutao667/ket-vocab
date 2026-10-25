@@ -227,11 +227,11 @@ export default function SelectPage() {
     apply([entry.id], !selectedRef.current.has(entry.id))
   }
 
-  const applyRange = (start: number, end: number, value: boolean) => {
+  const applyRange = (start: number, end: number) => {
     const snapshot = new Set(selectedRef.current)
     const ids = vocabulary.slice(start, end + 1).map((entry) => entry.id)
-    apply(ids, value)
-    showUndo(`${value ? '已选择' : '已取消'} ${ids.length} 个`, snapshot)
+    apply(ids, true)
+    showUndo(`已选择 ${ids.length} 个`, snapshot)
   }
 
   const clearAll = () => {
@@ -256,7 +256,18 @@ export default function SelectPage() {
   }
 
   return <div className="flex h-[100dvh] flex-col bg-paper">
-    <header className="flex items-center gap-2 bg-paper px-3 py-2"><Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link><div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>{selected.size > 0 && <button type="button" onClick={clearAll} aria-label={`清除已选的 ${selected.size} 个词`} className="flex h-8 shrink-0 items-center gap-1 rounded-full border border-stone-300 bg-white px-2.5 text-xs font-semibold text-stone-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700"><Trash2 size={14} />清除</button>}<span className="rounded-full bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-brand">已选 {selected.size}</span></header>
+    <header className="bg-paper px-3 pb-2 pt-2">
+      <div className="flex items-center gap-2">
+        <Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link>
+        <div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>
+        {selected.size > 0 && <button type="button" onClick={clearAll} aria-label={`清除已选的 ${selected.size} 个词`} className="flex h-8 shrink-0 items-center gap-1 rounded-full border border-stone-300 bg-white px-2.5 text-xs font-semibold text-stone-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700"><Trash2 size={14} />清除</button>}
+      </div>
+      {/* 已选数量与创建入口放在顶部，避免底部固定栏长期占用屏幕 */}
+      <div className="mt-2 flex items-center gap-3">
+        <strong className="flex-1 text-base text-brand" data-selected-count>已选 {selected.size} 词</strong>
+        <button disabled={!selected.size || !ready} onClick={openCreate} className="min-h-10 rounded-xl bg-brand px-4 text-sm font-bold text-white disabled:cursor-not-allowed disabled:bg-stone-300">创建背诵列表</button>
+      </div>
+    </header>
     {storageError && <div role="alert" className="flex items-start gap-2 bg-red-50 px-4 py-3 text-sm text-red-800"><Database className="mt-0.5 shrink-0" size={18} /><span>{storageError} 当前页面仍可临时使用，但刷新后可能丢失。</span><button aria-label="关闭提示" onClick={() => setStorageError('')}><X size={18} /></button></div>}
     <RangeInput total={vocabulary.length} value={rangeText} onChange={updateRangeText} onApply={applyRange} />
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-stone-200 bg-stone-100 px-3 py-1 text-[11px] text-stone-500"><span className="flex items-center gap-1"><MousePointer2 size={13} />左右拖动批量选 · 上下滑动滚动 · 点击切换</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-emerald-200" />本次已选</span><span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-amber-50 ring-1 ring-inset ring-amber-200" />已在列表</span></div>
@@ -272,7 +283,6 @@ export default function SelectPage() {
         })}
       </div>
     </div>
-    <footer className="safe-bottom z-20 flex items-center gap-4 border-t border-stone-200 bg-white px-4 pt-3 shadow-[0_-6px_20px_rgba(0,0,0,.06)]"><strong className="flex-1 text-lg">已选 {selected.size} 词</strong><button disabled={!selected.size || !ready} onClick={openCreate} className="min-h-12 rounded-xl bg-brand px-5 font-bold text-white disabled:cursor-not-allowed disabled:bg-stone-300">创建背诵列表</button></footer>
     {showCreate && <div className="fixed inset-0 z-40 grid place-items-end bg-black/40 sm:place-items-center sm:p-4" onMouseDown={(event) => { if (event.target === event.currentTarget) setShowCreate(false) }}><section role="dialog" aria-modal="true" aria-labelledby="create-title" className="w-full rounded-t-2xl bg-white p-5 shadow-2xl sm:max-w-md sm:rounded-2xl"><h2 id="create-title" className="text-xl font-bold">创建背诵列表</h2><p className="mt-1 text-sm text-stone-500">将保存当前选择的 {selected.size} 个词。</p><label className="mt-5 block"><span className="mb-1 block text-sm font-semibold">列表名称</span><input autoFocus value={listName} maxLength={80} onChange={(event) => setListName(event.target.value)} className="min-h-12 w-full rounded-lg border border-stone-300 px-3" /></label><div className="mt-5 flex gap-3"><button onClick={() => setShowCreate(false)} className="min-h-12 flex-1 rounded-lg border border-stone-300 font-semibold">取消</button><button disabled={!listName.trim() || creating} onClick={createList} className="min-h-12 flex-1 rounded-lg bg-brand font-bold text-white disabled:bg-stone-300">{creating ? '创建中…' : '确认创建'}</button></div></section></div>}
     <Toast toast={toast} onClose={() => setToast(null)} />
   </div>

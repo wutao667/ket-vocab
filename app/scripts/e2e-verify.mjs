@@ -69,7 +69,7 @@ function check(name, pass, detail) {
 }
 
 async function selectedCount(cdp) {
-  const text = await cdp.eval(`document.querySelector('footer strong')?.textContent || ''`);
+  const text = await cdp.eval(`document.querySelector('[data-selected-count]')?.textContent || ''`);
   return Number(/已选\s*(\d+)/.exec(text)?.[1] ?? -1);
 }
 
@@ -195,9 +195,9 @@ async function main() {
   await setRange(cdp, '20-1'); await clickButton(cdp, '加入选择');
   const rangeError = await cdp.eval(`document.querySelector('[role="alert"]')?.textContent || ''`);
   check('反向范围显示具体错误', rangeError.includes('不能大于'), JSON.stringify(rangeError));
-  await setRange(cdp, '1-20'); await clickButton(cdp, '从选择中移除');
+  await setRange(cdp, '1-20'); await clickButton(cdp, '加入选择');
   await setRange(cdp, '1700-1723'); await clickButton(cdp, '加入选择');
-  check('范围 1700-1723 选中 24 个', await selectedCount(cdp) === 24, `选中 ${await selectedCount(cdp)}`);
+  check('范围 1700-1723 追加后选中 24 个', await selectedCount(cdp) === 24, `选中 ${await selectedCount(cdp)}`);
 
   // 7. 滚至末尾，确认最后词与不足 10 格的末行
   await cdp.eval(`document.querySelector('[data-vocab-scroll]').scrollTop = document.querySelector('[data-vocab-scroll]').scrollHeight`); await sleep(450);
