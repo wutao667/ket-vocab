@@ -27,6 +27,10 @@ const proxy = {
 export default defineConfig({
   plugins: [react()],
   base: './',
+  // 词库是 400KB 的大 JSON。默认 Vite 会把它编成 JS 对象字面量，
+  // V8 需要逐个字段求值，开销远大于 JSON.parse。
+  // 开启 stringify 后输出 JSON.parse("…")，解析快数倍，明显改善首次进入的卡顿。
+  json: { stringify: true },
   server: { proxy },
   preview: { proxy },
 })
