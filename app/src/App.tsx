@@ -11,13 +11,14 @@ import FavoritesPage from './pages/FavoritesPage'
 import LearnPage from './pages/LearnPage'
 import RecallPage from './pages/RecallPage'
 import LoginPage from './pages/LoginPage'
+import DebugTtsPage from './pages/DebugTtsPage'
 import UpdatePrompt from './pwa/UpdatePrompt'
 import { SpeechProvider } from './tts/SpeechProvider'
 
 function AppShell() {
   useEffect(() => startSyncTriggers(), [])
   return <><div className="sticky top-0 z-30 flex min-h-10 items-center justify-end gap-2 border-b border-stone-200 bg-[#f7f4ed]/95 px-3 backdrop-blur"><SyncStatus /><AccountMenu /></div><Routes>
-    <Route path="/login" element={<Navigate to="/" replace />} /><Route path="/" element={<HomePage />} /><Route path="/select" element={<SelectPage />} /><Route path="/lists/:listId" element={<ListPage />} /><Route path="/lists/:listId/learn" element={<LearnPage />} /><Route path="/lists/:listId/recall" element={<RecallPage />} /><Route path="/favorites" element={<FavoritesPage />} /><Route path="/favorites/learn" element={<LearnPage favorites />} /><Route path="/favorites/recall" element={<RecallPage favorites />} /><Route path="*" element={<Navigate to="/" replace />} />
+    <Route path="/login" element={<Navigate to="/" replace />} /><Route path="/" element={<HomePage />} /><Route path="/select" element={<SelectPage />} /><Route path="/lists/:listId" element={<ListPage />} /><Route path="/lists/:listId/learn" element={<LearnPage />} /><Route path="/lists/:listId/recall" element={<RecallPage />} /><Route path="/favorites" element={<FavoritesPage />} /><Route path="/favorites/learn" element={<LearnPage favorites />} /><Route path="/favorites/recall" element={<RecallPage favorites />} /><Route path="/debug/tts" element={<DebugTtsPage />} /><Route path="*" element={<Navigate to="/" replace />} />
   </Routes></>
 }
 function LoginGate() { const location = useLocation(); return <><LoginPage />{location.pathname !== '/login' && <Navigate to="/login" replace />}</> }
