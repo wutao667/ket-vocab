@@ -8,6 +8,7 @@ import VocabRow from '../components/VocabRow'
 import type { VocabEntry } from '../data/types'
 import vocabJson from '../data/vocab.json'
 import { repository } from '../db/repository'
+import { config } from '../config/app-config'
 import { indexForAnchor, useScrollMemory } from '../hooks/useScrollMemory'
 import { useSelection } from '../hooks/useSelection'
 import { beginGesture, visitGesture, type SelectionGesture } from '../selection/gesture'
@@ -242,7 +243,7 @@ export default function SelectPage() {
     showUndo(`已清除 ${snapshot.size} 个`, snapshot)
   }
 
-  const openCreate = () => { setListName(`${localDate()} KET 词表`); setShowCreate(true) }
+  const openCreate = () => { setListName(`${localDate()} ${config.brandName}`); setShowCreate(true) }
   const createList = async () => {
     if (!listName.trim() || creating) return
     setCreating(true)
@@ -259,7 +260,7 @@ export default function SelectPage() {
     <header className="bg-paper px-3 pb-2 pt-2">
       <div className="flex items-center gap-2">
         <Link to="/" aria-label="返回列表" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-stone-200"><ArrowLeft /></Link>
-        <div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">KET 词表</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>
+        <div className="min-w-0 flex-1"><h1 className="truncate text-lg font-bold">{config.brandName}</h1><p className="text-xs text-stone-500">A–Z · 共 {vocabulary.length} 词</p></div>
         {selected.size > 0 && <button type="button" onClick={clearAll} aria-label={`清除已选的 ${selected.size} 个词`} className="flex h-8 shrink-0 items-center gap-1 rounded-full border border-stone-300 bg-white px-2.5 text-xs font-semibold text-stone-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700"><Trash2 size={14} />清除</button>}
       </div>
       {/* 已选数量与创建入口放在顶部，避免底部固定栏长期占用屏幕 */}

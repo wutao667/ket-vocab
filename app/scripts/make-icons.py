@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
-"""生成 KET 词匣的 PWA 图标。
+"""生成词匣系列的 PWA 图标。
 
-设计：品牌绿底 (#176b5b) + 白色词卡造型，中间一个 "K" 字母。
+设计：品牌绿底 (#176b5b) + 白色词卡造型，中间一个品牌字母。
 maskable 版本留足安全边距（内容在中心 80% 圆内），避免被系统裁掉。
+
+用法：
+  python3 make-icons.py KET    → public/icons/（KET，默认）
+  python3 make-icons.py PET    → public/icons/（PET）
+字母取应用标识首字母，与 apps.json 的 brandMark 保持一致。
 """
+import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+
+APP = (sys.argv[1] if len(sys.argv) > 1 else 'KET').upper()
+BRAND_LETTER = APP[0]
 
 OUT = Path(__file__).resolve().parent.parent / "public" / "icons"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -61,8 +70,8 @@ def draw_icon(size: int, padding_ratio: float, maskable: bool) -> Image.Image:
     # 前面的主卡片
     rounded_rect(d, [card_x, card_y, card_x + card_w, card_y + card_h], card_r, CREAM)
 
-    # 卡片上的 "K"
-    letter = "K"
+    # 卡片上的品牌字母
+    letter = BRAND_LETTER
     font_size = int(card_h * 0.52)
     try:
         font = ImageFont.truetype(FONT_BOLD, font_size)

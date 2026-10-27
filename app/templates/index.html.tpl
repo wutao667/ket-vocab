@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#f7f4ed" />
-    <meta name="description" content="基于剑桥 A2 Key 官方词汇表的背单词应用，1723 个词条，支持双向背诵与跨设备同步。" />
-    <title>KET 词匣</title>
+    <meta name="description" content="__DESCRIPTION__" />
+    <title>__TITLE__</title>
 
     <!-- PWA -->
     <link rel="manifest" href="./manifest.webmanifest" />
@@ -14,7 +14,7 @@
     <!-- iOS 主屏：standalone 全屏、状态栏样式、图标 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="KET 词匣" />
+    <meta name="apple-mobile-web-app-title" content="__TITLE__" />
     <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
 
     <!-- Android/桌面：主题色与移动端体验 -->
@@ -66,8 +66,8 @@
   </head>
   <body>
     <div id="boot">
-      <div class="mark">K</div>
-      <p class="title">KET 词匣</p>
+      <div class="mark">__BRAND_MARK__</div>
+      <p class="title">__BRAND__</p>
       <p class="hint" id="boot-hint">正在加载…</p>
       <div class="track"><div class="bar"></div></div>
     </div>

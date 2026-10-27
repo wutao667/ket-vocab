@@ -6,12 +6,13 @@ import { SpeechSettings } from '../components/SpeechControls'
 import { repository } from '../db/repository'
 import { useStudySource } from '../hooks/useStudySource'
 import { shuffleForRecall } from '../recall/shuffle'
+import { storageKey } from '../config/app-config'
 
 export default function RecallPage({ favorites = false }: { favorites?: boolean }) {
   const { listId } = useParams(); const location = useLocation(); const navigate = useNavigate(); const favoriteOnly = new URLSearchParams(location.search).get('favorites') === '1'
   const { source, error, reload } = useStudySource(listId, favorites, favoriteOnly)
   const [started, setStarted] = useState(false); const [completed, setCompleted] = useState(false); const [index, setIndex] = useState(0); const [revealed, setRevealed] = useState<Set<number>>(new Set())
-  const [direction, setDirectionState] = useState<RecallDirection>(() => (localStorage.getItem('ket-recall-direction') as RecallDirection) || 'en-zh')
+  const [direction, setDirectionState] = useState<RecallDirection>(() => (localStorage.getItem(storageKey('recall-direction')) as RecallDirection) || 'en-zh')
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set()); const [snapshot, setSnapshot] = useState(source?.entries ?? [])
   const previousOrder = useRef<string[]>([])
   useEffect(() => { void repository.getFavoriteIds().then((ids) => setFavoriteIds(new Set(ids))) }, [])
@@ -25,7 +26,7 @@ export default function RecallPage({ favorites = false }: { favorites?: boolean 
     setCompleted(false)
     setStarted(true)
   }, [source])
-  const setDirection = (value: RecallDirection) => { setDirectionState(value); localStorage.setItem('ket-recall-direction', value) }
+  const setDirection = (value: RecallDirection) => { setDirectionState(value); localStorage.setItem(storageKey('recall-direction'), value) }
   const next = useCallback(() => { if (index >= snapshot.length - 1) setCompleted(true); else setIndex((value) => value + 1) }, [index, snapshot.length])
   // 只负责揭晓答案，不再兼做「下一个」——答案本来就能点遮挡区查看
   const reveal = useCallback(() => { setRevealed((current) => current.has(index) ? current : new Set(current).add(index)) }, [index])

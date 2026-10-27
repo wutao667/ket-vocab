@@ -1,4 +1,4 @@
-/* KET 词匣 Service Worker
+/* __BRAND__ Service Worker
  *
  * 目标：首次在线加载成功后，断网也能从桌面图标打开应用。
  *
@@ -11,7 +11,7 @@
  * 版本升级：CACHE_VERSION 改变 → activate 阶段清理旧缓存。
  */
 
-const CACHE_VERSION = 'ket-v2';
+const CACHE_VERSION = '__CACHE_PREFIX__-v1';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const ASSET_CACHE = `${CACHE_VERSION}-assets`;
 
@@ -54,7 +54,7 @@ self.addEventListener('activate', (event) => {
       const keys = await caches.keys();
       await Promise.all(
         keys
-          .filter((key) => key.startsWith('ket-') && !key.startsWith(CACHE_VERSION))
+          .filter((key) => key.startsWith('__CACHE_PREFIX__-') && !key.startsWith(CACHE_VERSION))
           .map((key) => caches.delete(key)),
       );
       await self.clients.claim();

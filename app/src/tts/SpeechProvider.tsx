@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { speakWithFallback, type TTSEngine } from './tts'
+import { storageKey } from '../config/app-config'
 
 interface SpeechContextValue {
   activeKey: string; engine: TTSEngine; actualEngine: TTSEngine | ''; speed: number; message: string
@@ -10,8 +11,8 @@ const SpeechContext = createContext<SpeechContextValue | null>(null)
 
 export function SpeechProvider({ children }: { children: ReactNode }) {
   const [request, setRequest] = useState<{ key: string; text: string; engine: TTSEngine; speed: number; nonce: number } | null>(null)
-  const [engine, setEngineState] = useState<TTSEngine>(() => (localStorage.getItem('ket-tts-engine') as TTSEngine) || 'edge')
-  const [speed, setSpeedState] = useState(() => Number(localStorage.getItem('ket-tts-speed')) || 0.85)
+  const [engine, setEngineState] = useState<TTSEngine>(() => (localStorage.getItem(storageKey('tts-engine')) as TTSEngine) || 'edge')
+  const [speed, setSpeedState] = useState(() => Number(localStorage.getItem(storageKey('tts-speed'))) || 0.85)
   const [actualEngine, setActualEngine] = useState<TTSEngine | ''>(''); const [message, setMessage] = useState('')
   const controller = useRef<AbortController | null>(null)
   const stop = useCallback(() => setRequest(null), [])
@@ -32,8 +33,8 @@ export function SpeechProvider({ children }: { children: ReactNode }) {
     }).finally(() => { if (!current.signal.aborted && controller.current === current) { controller.current = null; setRequest(null) } })
     return () => { current.abort(); if (controller.current === current) controller.current = null }
   }, [request])
-  const setEngine = (value: TTSEngine) => { setEngineState(value); localStorage.setItem('ket-tts-engine', value) }
-  const setSpeed = (value: number) => { setSpeedState(value); localStorage.setItem('ket-tts-speed', String(value)) }
+  const setEngine = (value: TTSEngine) => { setEngineState(value); localStorage.setItem(storageKey('tts-engine'), value) }
+  const setSpeed = (value: number) => { setSpeedState(value); localStorage.setItem(storageKey('tts-speed'), String(value)) }
   const activeKey = request?.key ?? ''
   const value = useMemo(() => ({ activeKey, engine, actualEngine, speed, message, setEngine, setSpeed, play, stop }), [activeKey, engine, actualEngine, speed, message, play, stop])
   return <SpeechContext.Provider value={value}>{children}</SpeechContext.Provider>

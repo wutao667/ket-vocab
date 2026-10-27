@@ -1,0 +1,40 @@
+{
+  "ket": {
+    "id": "ket",
+    "idPrefix": "ket",
+    "wordCount": 1723,
+    "examName": "Cambridge A2 Key",
+    "brandName": "KET 词匣",
+    "brandLatin": "KET Vocabulary",
+    "brandMark": "K",
+    "title": "KET 词匣",
+    "description": "基于剑桥 A2 Key 官方词汇表的背单词应用，1723 个词条，支持双向背诵与跨设备同步。",
+    "storagePrefix": "ket",
+    "dbName": "ket-vocab",
+    "cachePrefix": "ket",
+    "siteUrl": "https://ket.huaguo.site",
+    "syncPort": 3117,
+    "ttsPort": 3116,
+    "webRoot": "/var/www/ket",
+    "dataDir": "/var/lib/ket-sync"
+  },
+  "pet": {
+    "id": "pet",
+    "idPrefix": "pet",
+    "wordCount": 3099,
+    "examName": "Cambridge B1 Preliminary",
+    "brandName": "PET 词匣",
+    "brandLatin": "PET Vocabulary",
+    "brandMark": "P",
+    "title": "PET 词匣",
+    "description": "基于剑桥 B1 Preliminary 官方词汇表的背单词应用，3099 个词条，支持双向背诵与跨设备同步。",
+    "storagePrefix": "pet",
+    "dbName": "pet-vocab",
+    "cachePrefix": "pet",
+    "siteUrl": "https://pet.huaguo.site",
+    "syncPort": 3118,
+    "ttsPort": 3116,
+    "webRoot": "/var/www/pet",
+    "dataDir": "/var/lib/pet-sync"
+  }
+}

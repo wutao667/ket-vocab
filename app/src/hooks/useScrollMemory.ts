@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
+import { storageKey } from '../config/app-config'
 
-const prefix = 'ket-scroll-anchor:'
+const prefix = storageKey('scroll-anchor:')
 
 export function indexForAnchor(ids: string[], anchor: string | null) {
   if (!anchor) return 0

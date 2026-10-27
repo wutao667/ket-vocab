@@ -1,10 +1,12 @@
 import { openDB, type IDBPDatabase } from 'idb'
 import { DB_NAME, DB_VERSION, LEGACY_PROFILE_ID, type KetVocabDB, type OperationKind, type PendingOperation, type StudyList } from './schema'
 import { notifyDataChanged } from './events'
+import { eventName, storageKey } from '../config/app-config'
 
 const SELECTION_TTL = 24 * 60 * 60 * 1000
-const ACTIVE_PROFILE_KEY = 'ket-active-profile'
-const DEVICE_KEY = 'ket-device-id'
+const ACTIVE_PROFILE_KEY = storageKey('active-profile')
+const DEVICE_KEY = storageKey('device-id')
+const LOCAL_EVENT = eventName('local-change')
 let databasePromise: Promise<IDBPDatabase<KetVocabDB>> | undefined
 
 export class StorageError extends Error { constructor(message: string, options?: ErrorOptions) { super(message, options); this.name = 'StorageError' } }
@@ -30,7 +32,7 @@ const listVocabKey = (profileId: string, listId: string, vocabId: string) => `${
 function operation(profileId: string, kind: OperationKind, entityId: string, payload: Record<string, unknown>, createdAt = Date.now()): PendingOperation { return { opId: crypto.randomUUID(), profileId, deviceId: deviceId(), kind, entityId, payload, createdAt, attemptCount: 0, nextAttemptAt: createdAt } }
 function announceLocalChange() {
   // ket-local-change：给同步引擎用（触发上传）
-  globalThis.dispatchEvent?.(new Event('ket-local-change'))
+  globalThis.dispatchEvent?.(new Event(LOCAL_EVENT))
   // ket-data-changed：给界面用（重新读取列表/收藏）
   notifyDataChanged()
 }

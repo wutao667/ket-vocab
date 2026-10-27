@@ -26,3 +26,12 @@ SYNC-BRIEF.md
 SYNC-OFFLINE-BRIEF.md
 SYNC-BACKEND-BRIEF.md
 SYNC-FRONTEND-BRIEF.md
+
+# 词库产物由 scripts/build-data.mjs 按目标应用生成（A2：一套代码两个应用）
+# 不入库，否则构建 PET 时会覆盖 KET 的 vocab.json，历史里来回抖动。
+app/src/data/vocab.json
+app/src/data/topics.json
+app/index.html
+app/public/sw.js
+app/public/manifest.webmanifest
+app/public/icons/

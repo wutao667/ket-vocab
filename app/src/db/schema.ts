@@ -1,6 +1,8 @@
 import type { DBSchema } from 'idb'
+import { config } from '../config/app-config'
 
-export const DB_NAME = 'ket-vocab'
+// 数据库名按应用隔离：KET 与 PET 若同域共存，共用一个库会把两边数据搅在一起。
+export const DB_NAME = config.dbName
 export const DB_VERSION = 3
 export const LEGACY_PROFILE_ID = 'default'
 /** @deprecated only retained for source compatibility with v2 callers. */

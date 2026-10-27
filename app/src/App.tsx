@@ -4,6 +4,7 @@ import AccountMenu from './components/AccountMenu'
 import SyncStatus from './components/SyncStatus'
 import { getActiveProfile } from './auth/session'
 import { startSyncTriggers } from './sync/engine'
+import { config, eventName } from './config/app-config'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import UpdatePrompt from './pwa/UpdatePrompt'
@@ -64,8 +65,8 @@ export default function App() {
   const [profile, setProfile] = useState(() => getActiveProfile())
   useEffect(() => {
     const update = () => setProfile(getActiveProfile())
-    window.addEventListener('ket-session-change', update)
-    return () => window.removeEventListener('ket-session-change', update)
+    window.addEventListener(eventName('session-change'), update)
+    return () => window.removeEventListener(eventName('session-change'), update)
   }, [])
   return <SpeechProvider>{profile ? <AppShell /> : <Routes><Route path="*" element={<LoginGate />} /></Routes>}<UpdatePrompt /></SpeechProvider>
 }

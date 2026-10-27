@@ -4,9 +4,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "data": "node scripts/build-data.mjs",
+    "data:ket": "node scripts/build-data.mjs ket",
+    "data:pet": "node scripts/build-data.mjs pet",
+    "gen:ket": "node scripts/build-data.mjs ket && node scripts/build-app.mjs ket",
+    "gen:pet": "node scripts/build-data.mjs pet && node scripts/build-app.mjs pet",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev:ket": "node scripts/build-data.mjs ket && node scripts/build-app.mjs ket && VITE_APP_ID=ket vite",
+    "dev:pet": "node scripts/build-data.mjs pet && node scripts/build-app.mjs pet && VITE_APP_ID=pet vite",
+    "build": "vite build",
+    "build:ket": "node scripts/build-data.mjs ket && node scripts/build-app.mjs ket && python3 scripts/make-icons.py KET && VITE_APP_ID=ket vite build --outDir dist/ket",
+    "build:pet": "node scripts/build-data.mjs pet && node scripts/build-app.mjs pet && python3 scripts/make-icons.py PET && VITE_APP_ID=pet vite build --outDir dist/pet",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

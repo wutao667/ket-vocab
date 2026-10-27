@@ -1,7 +1,7 @@
 {
-  "name": "KET 词匣 · 背单词",
-  "short_name": "KET 词匣",
-  "description": "基于剑桥 A2 Key 官方词汇表的背单词应用，1723 个词条，支持双向背诵与跨设备同步。",
+  "name": "__BRAND__ · 背单词",
+  "short_name": "__BRAND__",
+  "description": "__DESCRIPTION__",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -9,7 +9,9 @@
  * 都要发一次事件，页面订阅后重新读一遍。
  */
 
-const EVENT_NAME = 'ket-data-changed'
+import { eventName } from '../config/app-config'
+
+const EVENT_NAME = eventName('data-changed')
 
 export function notifyDataChanged() {
   globalThis.dispatchEvent?.(new Event(EVENT_NAME))

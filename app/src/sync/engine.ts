@@ -6,6 +6,7 @@ import { api } from './client'
 import { ApiError, type Snapshot, type SyncChange, type SyncResponse } from './types'
 import { getSyncStatus, setSyncStatus } from './status'
 import type { IDBPTransaction } from 'idb'
+import { config, eventName } from '../config/app-config'
 
 const BACKOFF = [1_000, 2_000, 5_000, 10_000, 30_000, 60_000]
 export function retryDelay(attempt: number, random = Math.random): number { const base = attempt < BACKOFF.length ? BACKOFF[attempt] : Math.min(300_000, 60_000 * 2 ** (attempt - BACKOFF.length + 1)); return Math.round(Math.min(300_000, base) * (0.8 + random() * 0.4)) }
@@ -95,13 +96,13 @@ export async function syncNow() {
     try { await api.login(profile.username, false, getDeviceId()); profile = { ...profile, needsOnlineLogin: false, lastLoginAt: Date.now() }; setActiveProfile(profile) }
     catch (cause) { const error = cause as ApiError; setSyncStatus({ phase: error.status === 0 ? 'offline' : 'auth-paused' }); return }
   }
-  const locks = navigator.locks; if (locks) await locks.request(`ket-sync:${profile.userId}`, { ifAvailable: true }, async (lock) => { if (lock) await runUnlocked(profile.userId) }); else await runUnlocked(profile.userId)
+  const locks = navigator.locks; if (locks) await locks.request(`${config.storagePrefix}-sync:${profile.userId}`, { ifAvailable: true }, async (lock) => { if (lock) await runUnlocked(profile.userId) }); else await runUnlocked(profile.userId)
 }
 let debounce: number | undefined
 export function startSyncTriggers() {
   const trigger = () => void syncNow(), local = () => { window.clearTimeout(debounce); debounce = window.setTimeout(trigger, 500) }, visible = () => { if (document.visibilityState === 'visible') trigger() }
-  window.addEventListener('online', trigger); window.addEventListener('ket-local-change', local); document.addEventListener('visibilitychange', visible); const timer = window.setInterval(trigger, 60_000); trigger()
-  return () => { window.removeEventListener('online', trigger); window.removeEventListener('ket-local-change', local); document.removeEventListener('visibilitychange', visible); window.clearInterval(timer); window.clearTimeout(debounce) }
+  window.addEventListener('online', trigger); window.addEventListener(eventName('local-change'), local); document.addEventListener('visibilitychange', visible); const timer = window.setInterval(trigger, 60_000); trigger()
+  return () => { window.removeEventListener('online', trigger); window.removeEventListener(eventName('local-change'), local); document.removeEventListener('visibilitychange', visible); window.clearInterval(timer); window.clearTimeout(debounce) }
 }
 
 export async function stableMigrationOpId(userId: string, kind: string, legacyKey: string) { const bytes = new TextEncoder().encode(`migration-v1\0${userId}${kind}${legacyKey}`), hash = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)); return [...hash].map((value) => value.toString(16).padStart(2, '0')).join('') }
