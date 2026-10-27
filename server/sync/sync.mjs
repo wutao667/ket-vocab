@@ -1,4 +1,4 @@
-import { MAX_CHANGES, MAX_LISTS_PER_USER, MAX_OPERATIONS } from './config.mjs';
+import { MAX_CHANGES, MAX_LISTS_PER_USER, MAX_OPERATIONS, MAX_VOCAB_IDS } from './config.mjs';
 import { currentCursor, transaction } from './db.mjs';
 import {
   HttpError,
@@ -28,7 +28,7 @@ function validateOperation(raw) {
 
   if (kind === 'list.create') {
     if (!Array.isArray(payload.vocabIds)) throw new HttpError(400, 'INVALID_REQUEST', 'vocabIds must be an array');
-    if (payload.vocabIds.length > 1723) throw new HttpError(400, 'INVALID_REQUEST', 'too many vocabIds');
+    if (payload.vocabIds.length > MAX_VOCAB_IDS) throw new HttpError(400, 'INVALID_REQUEST', 'too many vocabIds');
     cleanPayload = {
       name: validateListName(payload.name),
       vocabIds: [...new Set(payload.vocabIds.map(validateVocabId))],

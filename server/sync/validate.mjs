@@ -1,3 +1,9 @@
+import { VOCAB_ID_MAX, VOCAB_ID_PREFIX } from './config.mjs';
+
+// 前缀与上限从配置来，KET / PET 各用各的。
+const VOCAB_ID_PATTERN = new RegExp(`^${VOCAB_ID_PREFIX}-\\d{4}$`);
+const VOCAB_ID_HINT = `${VOCAB_ID_PREFIX}-0001`;
+
 export class HttpError extends Error {
   constructor(status, code, message, retryable = false) {
     super(message);
@@ -58,12 +64,12 @@ export function validateListName(value) {
 }
 
 export function validateVocabId(value) {
-  if (typeof value !== 'string' || !/^ket-\d{4}$/.test(value)) {
-    throw new HttpError(400, 'INVALID_VOCAB_ID', 'vocabId must use the ket-0001 format');
+  if (typeof value !== 'string' || !VOCAB_ID_PATTERN.test(value)) {
+    throw new HttpError(400, 'INVALID_VOCAB_ID', `vocabId must use the ${VOCAB_ID_HINT} format`);
   }
-  const number = Number(value.slice(4));
-  if (number < 1 || number > 1723) {
-    throw new HttpError(400, 'INVALID_VOCAB_ID', 'vocabId is outside ket-0001..ket-1723');
+  const number = Number(value.slice(VOCAB_ID_PREFIX.length + 1));
+  if (number < 1 || number > VOCAB_ID_MAX) {
+    throw new HttpError(400, 'INVALID_VOCAB_ID', `vocabId is outside ${VOCAB_ID_HINT}..${VOCAB_ID_PREFIX}-${VOCAB_ID_MAX}`);
   }
   return value;
 }

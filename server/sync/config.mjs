@@ -16,3 +16,11 @@ export const MAX_OPERATIONS = 100;
 export const MAX_CHANGES = 500;
 export const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 export const MAX_LISTS_PER_USER = 200;
+
+// 词条 ID 的格式与上限。
+// 一套代码要同时服务 KET（ket-0001..ket-1723）与 PET（pet-0001..pet-3099），
+// 写死前缀会让另一个站点的同步全部 400（实测踩过：PET 建列表报 14 项无法同步）。
+export const VOCAB_ID_PREFIX = (process.env.KET_SYNC_VOCAB_PREFIX || 'ket').trim();
+export const VOCAB_ID_MAX = Number(process.env.KET_SYNC_VOCAB_MAX || 1723);
+/** 单个列表最多能装多少词：不超过词库总数即可。 */
+export const MAX_VOCAB_IDS = VOCAB_ID_MAX;

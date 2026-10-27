@@ -84,7 +84,8 @@ export function openDatabase(path) {
   const directoryExisted = existsSync(directory);
   mkdirSync(directory, { recursive: true, mode: 0o700 });
   // Never chmod an arbitrary existing parent supplied through KET_SYNC_DB (for example /tmp).
-  if (!directoryExisted || directory === '/var/lib/ket-sync') {
+  // 只对自家数据目录收紧权限：KET 用 /var/lib/ket-sync，PET 用 /var/lib/pet-sync。
+  if (!directoryExisted || /^\/var\/lib\/[a-z]+-sync$/.test(directory)) {
     try { chmodSync(directory, 0o700); } catch { /* startup may run without ownership */ }
   }
   const db = new DatabaseSync(path);

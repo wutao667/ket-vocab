@@ -115,6 +115,16 @@ await mkdir(outputRoot, { recursive: true })
 await writeFile(mapPath, `${JSON.stringify(frozen, null, 2)}\n`)
 await writeFile(resolve(outputRoot, 'vocab.json'), `${JSON.stringify(generatedVocab, null, 2)}\n`)
 await writeFile(resolve(outputRoot, 'topics.json'), `${JSON.stringify(topics, null, 2)}\n`)
+// 同时记下本次产物属于哪个应用。
+// 测试环境没有 VITE_APP_ID，单靠 import.meta.env 判断会拿到默认值 ket，
+// 而 vocab.json 可能正是 PET 的产物，断言就会假失败（实测踩过）。
+// 让产物自带身份，测试直接读它，结果就与运行环境无关。
+await writeFile(resolve(outputRoot, 'meta.json'), `${JSON.stringify({
+  appId: APP,
+  idPrefix: source.prefix,
+  wordCount: generatedVocab.length,
+  topicCount: topics.length,
+}, null, 2)}\n`)
 
 const ids = generatedVocab.map(({ id }) => id)
 if (new Set(ids).size !== vocab.length) throw new Error('Generated IDs are not unique')

@@ -3,7 +3,7 @@ import { deleteDB, openDB } from 'idb'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { DB_NAME } from '../db/schema'
 import { database, repository, resetDatabaseForTests } from '../db/repository'
-import { applySyncResponse, retryDelay, stableMigrationOpId } from './engine'
+import { applySyncResponse, requeueOrphaned, retryDelay, stableMigrationOpId } from './engine'
 
 beforeEach(async () => {
   await resetDatabaseForTests()
@@ -43,6 +43,29 @@ describe('IndexedDB v3 and sync engine', () => {
   it('uses the documented capped exponential retry sequence with jitter', () => {
     expect([0, 1, 2, 3, 4, 5, 6, 20].map((attempt) => retryDelay(attempt, () => 0.5))).toEqual([1_000, 2_000, 5_000, 10_000, 30_000, 60_000, 120_000, 300_000])
     expect(retryDelay(0, () => 0)).toBe(800); expect(retryDelay(0, () => 1)).toBe(1_200)
+  })
+
+  // 回归：服务端拒绝操作后，前端会把该操作从队列删掉，但本地记录仍是 pending。
+  // 若不补回，即使服务端修好，这些数据也永远不会再上传
+  //（用户看到「有 14 项无法同步」，点立即同步毫无反应）。
+  it('re-enqueues local records left pending without a queued operation', async () => {
+    const list = await repository.createList('孤儿列表', ['pet-0001'], 'usr_orphan')
+    await repository.setFavorite('pet-0002', true, 'usr_orphan')
+    const db = await database()
+
+    // 模拟「操作已被服务端拒绝并从队列删除」
+    const tx = db.transaction('pendingOps', 'readwrite')
+    await tx.store.clear()
+    await tx.done
+    expect(await db.count('pendingOps')).toBe(0)
+
+    expect(await requeueOrphaned('usr_orphan')).toBe(2)
+    const ops = (await db.getAll('pendingOps')).filter((op) => op.profileId === 'usr_orphan')
+    expect(ops.map((op) => op.kind).sort()).toEqual(['favorite.set', 'list.create'])
+    expect(ops.find((op) => op.kind === 'list.create')).toMatchObject({ entityId: list.id, payload: { vocabIds: ['pet-0001'] } })
+
+    // 已在队列里的不重复入队：再调一次应当没有新增
+    expect(await requeueOrphaned('usr_orphan')).toBe(0)
   })
 
   it('derives stable, user-scoped migration operation ids', async () => {

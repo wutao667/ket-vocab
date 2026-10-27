@@ -42,7 +42,20 @@ async function replay(tx: WriteTx, op: PendingOperation) {
 
 export async function applySyncResponse(profileId: string, response: SyncResponse) {
   const db = await database(), tx = db.transaction(['lists', 'favorites', 'listVocab', 'pendingOps', 'syncMeta'], 'readwrite'), rejected: string[] = []
-  for (const result of response.results) { if (result.status === 'applied' || result.status === 'duplicate' || result.status === 'rejected') await tx.objectStore('pendingOps').delete(result.opId); if (result.status === 'rejected') rejected.push(result.code ?? '操作被拒绝') }
+  for (const result of response.results) {
+    // 服务端只回 opId，不回 entityId。要在删除前先取出操作本身，
+    // 否则后面想根据实体做补偿（如 LIST_EXISTS）就拿不到目标了。
+    const source = await tx.objectStore('pendingOps').get(result.opId)
+    if (result.status === 'applied' || result.status === 'duplicate' || result.status === 'rejected') await tx.objectStore('pendingOps').delete(result.opId)
+    if (result.status !== 'rejected') continue
+    rejected.push(result.code ?? '操作被拒绝')
+    // LIST_EXISTS / LIST_DELETED 表示服务端已有该列表，本地只是缺一次快照。
+    // 把本地标记为已同步，避免被 requeueOrphaned 再次入队造成死循环。
+    if ((result.code === 'LIST_EXISTS' || result.code === 'LIST_DELETED') && source) {
+      const lists = tx.objectStore('lists'), item = await lists.get(source.entityId)
+      if (item) await lists.put({ ...item, syncState: 'synced' })
+    }
+  }
   for (const change of [...response.changes].sort((a, b) => a.seq - b.seq)) await applyChange(tx, profileId, change)
   const remaining = (await tx.objectStore('pendingOps').getAll()).filter((op) => op.profileId === profileId).sort((a, b) => a.createdAt - b.createdAt)
   for (const op of remaining) await replay(tx, op)
@@ -50,6 +63,46 @@ export async function applySyncResponse(profileId: string, response: SyncRespons
   // 同步可能带来其他设备的改动，通知界面重新读取
   notifyDataChanged()
   return rejected
+}
+
+/**
+ * 修复「本地有、队列里没有」的孤儿数据。
+ *
+ * 为什么需要：操作被服务端拒绝（例如早期把词条 ID 格式写死成 ket- 导致 PET
+ * 全被拒）后，前端会把该操作从队列删掉，但本地记录仍停在 pending。
+ * 结果是服务端修好了，这些数据也永远不会再上传——用户看到的正是
+ * 「有 14 项无法同步」且点「立即同步」毫无反应。
+ *
+ * 策略：把标记为 pending 却没有对应待办操作的列表/收藏重新入队一次。
+ * 已正常排队的不会重复入队（有 op 就跳过），因此可安全地在每轮同步前调用。
+ */
+export async function requeueOrphaned(profileId: string): Promise<number> {
+  const db = await database()
+  const ops = (await db.getAll('pendingOps')).filter((op) => op.profileId === profileId)
+  const covered = new Set(ops.map((op) => `${op.kind === 'favorite.set' ? 'fav' : 'list'}:${op.entityId}`))
+  const lists = (await db.getAllFromIndex('lists', 'by-profile', profileId)).filter((item) => item.syncState === 'pending')
+  const favorites = (await db.getAllFromIndex('favorites', 'by-profile', profileId)).filter((item) => item.syncState === 'pending')
+
+  const pending: PendingOperation[] = []
+  const now = Date.now()
+  for (const list of lists) {
+    if (covered.has(`list:${list.id}`)) continue
+    if (list.deletedAt != null) {
+      pending.push({ opId: crypto.randomUUID(), profileId, deviceId: getDeviceId(), kind: 'list.delete', entityId: list.id, payload: {}, createdAt: now, attemptCount: 0, nextAttemptAt: now })
+    } else {
+      pending.push({ opId: crypto.randomUUID(), profileId, deviceId: getDeviceId(), kind: 'list.create', entityId: list.id, payload: { name: list.name, vocabIds: list.vocabIds }, createdAt: now, attemptCount: 0, nextAttemptAt: now })
+    }
+  }
+  for (const favorite of favorites) {
+    if (covered.has(`fav:${favorite.vocabId}`)) continue
+    pending.push({ opId: crypto.randomUUID(), profileId, deviceId: getDeviceId(), kind: 'favorite.set', entityId: favorite.vocabId, payload: { present: favorite.present !== false, ...(favorite.sourceListId ? { sourceListId: favorite.sourceListId } : {}) }, createdAt: now, attemptCount: 0, nextAttemptAt: now })
+  }
+  if (!pending.length) return 0
+
+  const tx = db.transaction('pendingOps', 'readwrite')
+  for (const op of pending) await tx.store.put(op)
+  await tx.done
+  return pending.length
 }
 
 export async function applySnapshot(profileId: string, snapshot: Snapshot) {
@@ -70,7 +123,13 @@ async function runUnlocked(profileId: string) {
   if (running) return; running = true
   let attempted: PendingOperation[] = []
   try {
-    setSyncStatus({ phase: 'syncing' }); let hasMore = true, first = true, errors = [...getSyncStatus().errors]
+    // 错误只在「本轮同步」内累积。若沿用上一轮的残留错误，服务端修好后
+    // 界面会永远停在「有 N 项无法同步」，用户点了立即同步也没反应（实测踩过）。
+    // 先补回「本地 pending 但队列里没有」的孤儿数据：
+    // 早期被服务端拒绝的操作会从队列删除，本地却仍标记 pending，
+    // 不补的话即使服务端已修好，这些数据也永远不会再上传。
+    await requeueOrphaned(profileId)
+    setSyncStatus({ phase: 'syncing' }); let hasMore = true, first = true, errors: string[] = []
     while (hasMore) {
       const db = await database(), meta = await db.get('syncMeta', profileId), now = Date.now()
       const pending = (await db.getAll('pendingOps')).filter((op) => op.profileId === profileId && op.nextAttemptAt <= now).sort((a, b) => a.createdAt - b.createdAt).slice(0, first ? 50 : 0); attempted = pending
@@ -85,7 +144,8 @@ async function runUnlocked(profileId: string) {
     const count = (await db.getAll('pendingOps')).filter((op) => op.profileId === profileId).length
     if (error.status === 401) setSyncStatus({ phase: 'auth-paused', pending: count })
     else if (error.status === 0 || !navigator.onLine) setSyncStatus({ phase: 'offline', pending: count })
-    else setSyncStatus({ phase: error.retryable || error.status === 429 || error.status >= 500 ? 'retry-wait' : 'permanent-error', pending: count, errors: error.retryable ? getSyncStatus().errors : [...getSyncStatus().errors, error.message] })
+    // 同一错误连续重试会重复入列（曾出现 14 条一模一样的提示），这里去重。
+    else setSyncStatus({ phase: error.retryable || error.status === 429 || error.status >= 500 ? 'retry-wait' : 'permanent-error', pending: count, errors: error.retryable ? getSyncStatus().errors : [...new Set([...getSyncStatus().errors, error.message])] })
     if (error.status !== 401 && delays.length) window.setTimeout(() => void syncNow(), Math.min(...delays))
   } finally { running = false }
 }
