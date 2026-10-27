@@ -13,6 +13,7 @@ import { indexForAnchor, useScrollMemory } from '../hooks/useScrollMemory'
 import { useSelection } from '../hooks/useSelection'
 import { beginGesture, visitGesture, type SelectionGesture } from '../selection/gesture'
 import { buildGridItems, type GridItem } from '../selection/grid'
+import { pickRandomUnseen } from '../selection/random-pick'
 
 const vocabulary = vocabJson as VocabEntry[]
 const gridItems = buildGridItems(vocabulary)
@@ -79,12 +80,19 @@ export default function SelectPage() {
   const updateRangeText = (next: string) => setManualRange({ text: next, forDerived: derivedRange })
   // 已经在别的背诵列表里的词：给个淡底色，避免重复挑选。
   const [inListIds, setInListIds] = useState<Set<string>>(new Set())
+  // 生词本里的词同样算「已经选过」，随机挑选时一并排除。
+  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     repository.getLists()
       .then((lists) => setInListIds(new Set(lists.flatMap((list) => list.vocabIds))))
       .catch(() => { /* 读不到就不做标记，不打扰用户 */ })
+    repository.getFavoriteIds()
+      .then((ids) => setFavoriteIds(new Set(ids)))
+      .catch(() => { /* 同上 */ })
   }, [])
+
+  const seenIds = useMemo(() => new Set([...inListIds, ...favoriteIds]), [inListIds, favoriteIds])
 
   const showUndo = useCallback((text: string, snapshot: Set<string>, duration = 3000) => {
     setToast({ id: Date.now(), text: `${text}｜`, duration, actionLabel: '撤销', onAction: () => restore(snapshot) })
@@ -235,6 +243,19 @@ export default function SelectPage() {
     showUndo(`已选择 ${ids.length} 个`, snapshot)
   }
 
+  // 随机抽 10 个「从来没选过」的词（已在列表 / 已收藏的都排除）。
+  // 每点一次追加 10 个，所以点两次是 20、三次是 30，天然累加。
+  const pickRandom = () => {
+    const snapshot = new Set(selectedRef.current)
+    const picked = pickRandomUnseen(vocabulary.map((entry) => entry.id), seenIds, snapshot, 10)
+    if (!picked.length) {
+      setToast({ id: Date.now(), text: '没有可抽的新词了——全部词条都已在列表或生词本中。', duration: 4000 })
+      return
+    }
+    apply(picked, true)
+    showUndo(`已随机加入 ${picked.length} 个`, snapshot)
+  }
+
   const clearAll = () => {
     const snapshot = new Set(selectedRef.current)
     if (!snapshot.size) return
@@ -266,6 +287,7 @@ export default function SelectPage() {
       {/* 已选数量与创建入口放在顶部，避免底部固定栏长期占用屏幕 */}
       <div className="mt-2 flex items-center gap-3">
         <strong className="flex-1 text-base text-brand" data-selected-count>已选 {selected.size} 词</strong>
+        <button type="button" disabled={!ready} onClick={pickRandom} aria-label="随机挑选 10 个从没选过的词" className="min-h-10 shrink-0 rounded-xl border border-stone-300 bg-white px-3 text-sm font-semibold text-stone-700 hover:border-emerald-400 hover:text-brand disabled:cursor-not-allowed disabled:text-stone-400">随机 10 个</button>
         <button disabled={!selected.size || !ready} onClick={openCreate} className="min-h-10 rounded-xl bg-orange-700 px-4 text-sm font-bold text-white shadow-sm hover:bg-orange-800 disabled:cursor-not-allowed disabled:bg-stone-300">创建背诵列表</button>
       </div>
     </header>
