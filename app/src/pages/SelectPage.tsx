@@ -264,7 +264,10 @@ export default function SelectPage() {
     showUndo(`已清除 ${snapshot.size} 个`, snapshot)
   }
 
-  const openCreate = () => { setListName(`${localDate()} ${config.brandName}`); setShowCreate(true) }
+  // 列表默认名只用日期，不带考试品牌：
+  // 同一个用户可能在 KET / PET / TOEFL 三个站点都用，名字里出现考试字样
+  // 反而让「我的背诵列表」显得不通用。
+  const openCreate = () => { setListName(`${localDate()} 背诵列表`); setShowCreate(true) }
   const createList = async () => {
     if (!listName.trim() || creating) return
     setCreating(true)

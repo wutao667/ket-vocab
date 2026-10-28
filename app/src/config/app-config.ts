@@ -18,7 +18,7 @@
  */
 import registry from './apps.json'
 
-export type AppId = 'ket' | 'pet'
+export type AppId = 'ket' | 'pet' | 'toefl'
 
 export interface AppConfig {
   /** 应用标识，用于构建分支判断 */
@@ -51,7 +51,12 @@ export interface AppConfig {
 
 function resolveAppId(): AppId {
   const raw = (import.meta.env?.VITE_APP_ID ?? '').trim().toLowerCase()
-  return raw === 'pet' ? 'pet' : 'ket'
+  // 必须按 registry 的实际键逐个校验。
+  // 早先这里写成「只认 pet，其余都当 ket」，导致 TOEFL 站点悄悄拿着 KET 配置跑：
+  // 界面显示 KET 文案、本地库名也变成 ket-vocab（构建期产物却是对的，
+  // 因为 build-app.mjs 直接读 apps.json，与运行时不是同一条路径）。
+  const known = Object.keys(registry) as AppId[]
+  return known.includes(raw as AppId) ? (raw as AppId) : 'ket'
 }
 
 export const APP_ID: AppId = resolveAppId()
