@@ -36,5 +36,24 @@
     "ttsPort": 3116,
     "webRoot": "/var/www/pet",
     "dataDir": "/var/lib/pet-sync"
+  },
+  "toefl": {
+    "id": "toefl",
+    "idPrefix": "toefl",
+    "wordCount": 5072,
+    "examName": "TOEFL",
+    "brandName": "TOEFL 词匣",
+    "brandLatin": "TOEFL Vocabulary",
+    "brandMark": "T",
+    "title": "TOEFL 词匣",
+    "description": "托福核心词汇背单词应用，5072 个词条，含音标、释义、例句与译文，支持双向背诵与跨设备同步。",
+    "storagePrefix": "toefl",
+    "dbName": "toefl-vocab",
+    "cachePrefix": "toefl",
+    "siteUrl": "https://tf.huaguo.site",
+    "syncPort": 3119,
+    "ttsPort": 3116,
+    "webRoot": "/var/www/toefl",
+    "dataDir": "/var/lib/toefl-sync"
   }
 }

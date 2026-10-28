@@ -15,7 +15,6 @@ import { fileURLToPath } from 'node:url'
  */
 
 const APP = (process.argv[2] || process.env.APP_ID || 'ket').toLowerCase()
-if (APP !== 'ket' && APP !== 'pet') throw new Error(`未知应用：${APP}（只接受 ket 或 pet）`)
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dataRoot = resolve(root, '../data')
@@ -41,12 +40,22 @@ const SOURCES = {
     mapping: resolve(dataRoot, 'pet/pet_topic_mapping.json'),
     mappingKey: 'mapping',
   },
+  // TOEFL 原始词表没有主题分组（纯 A–Z），因此 topics/mapping 为空。
+  // 选词页本来就按 A–Z 平铺，没有主题不影响使用。
+  toefl: {
+    prefix: 'toefl',
+    vocab: resolve(dataRoot, 'toefl/toefl_vocab_dataset.json'),
+    topics: null,
+    mapping: null,
+    mappingKey: 'mapping',
+  },
 }
 
 const source = SOURCES[APP]
+if (!source) throw new Error(`未知应用：${APP}（只接受 ${Object.keys(SOURCES).join(' / ')}）`)
 const vocab = await readJson(source.vocab)
-const sourceTopics = await readJson(source.topics)
-const topicMapping = await readJson(source.mapping)
+const sourceTopics = source.topics ? await readJson(source.topics) : []
+const topicMapping = source.mapping ? await readJson(source.mapping) : { mapping: [] }
 
 let frozen = { nextNumber: 1, entries: {} }
 try {

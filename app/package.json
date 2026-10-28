@@ -16,7 +16,11 @@
     "build:pet": "node scripts/build-data.mjs pet && node scripts/build-app.mjs pet && python3 scripts/make-icons.py PET && VITE_APP_ID=pet vite build --outDir dist/pet",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "data:toefl": "node scripts/build-data.mjs toefl",
+    "gen:toefl": "node scripts/build-data.mjs toefl && node scripts/build-app.mjs toefl",
+    "dev:toefl": "node scripts/build-data.mjs toefl && node scripts/build-app.mjs toefl && VITE_APP_ID=toefl vite",
+    "build:toefl": "node scripts/build-data.mjs toefl && node scripts/build-app.mjs toefl && python3 scripts/make-icons.py TOEFL && VITE_APP_ID=toefl vite build --outDir dist/toefl"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.13.12",
